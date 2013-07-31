@@ -1,0 +1,85 @@
+README for DSP09-dtcwt-wm
+
+
+MATLAB code implementing and testing the blind DT-CWT domain additive 
+spread-spectrum watermark detector proposed in the paper
+
+Roland Kwitt, Peter Meerwald, Andreas Uhl, "Blind DT-CWT Domain Additive Spread-Spectrum Watermark Detection", In Proceedings of the 16th International Conference on Digital Signal Processing, DSP '09, Santorin, Greece, July 5 - 7, 2009.
+
+See http://wavelab.at/sources.
+
+
+How to run:
+
+  1. Compute the detection performance of the linear correlation 
+     (LC), LRT-GGD and Rao-GGD detectors on a series of test images
+     for JPEG or JPEG 2000 attack.
+
+     run_attack_tests
+       See the comments in the file in order to determine the number of
+       experiments (e.g. 1000) to perform, select the detector type, select 
+       the attack (JPEG or JPEG2000), etc.
+
+       To reproduce the results of Figure 6 and 7, you have to run the script
+       six times with, setting selectattack = {JPEG_ATTACK, J2K_ATTACK} and
+       detectortype = {'lc', 'hernandez', 'rao'}.
+
+     The output is a set of files in your temporary directory which can 
+     be used to generate plots.
+
+  2. To produce plots, simply run
+			
+     generate_jpeg_plots
+     and
+     generate_j2k_plots
+       
+     The plots are produced in .eps format in your temporary directory.
+		
+Dependencies:
+
+The following programs and libraries need to be installed and in the 
+execution path (shell or MATLAB):
+* Nick Kingsbury's Dual Tree Complex Wavelet Transform (DT-CWT)
+  code for MATLAB; you have to contact the author at 
+  http://www-sigproc.eng.cam.ac.uk/~ngk/
+* David Taubman's Kakadu JPEG 2000 codec (v6.0), http://www.kakadusoftware.com
+* Minh N. Do's MATLAB implementation of the moment matching and 
+  maximum likelihood estimators for the generalized Gaussian 
+  density, http://www.ifp.uiuc.edu/~minhdo/software/
+* Nikola Sprljan's MATLAB Quality Assessment toolbox (v1.10), 
+  http://sprljan.com/nikola/matlab/qassessment.html
+
+The code has been tested under Debian and Ubuntu Linux and MATLAB 7.4.
+
+
+Disclaimer:
+
+This material is distributed in the hope that it will be useful, but 
+WITHOUT ANY WARRANTY. No author or distributor accepts responsibility
+to anyone for the consequences of using it or for whether it serves 
+any particular purpose or works at all.
+
+The material is prepared strictly for research use only, commercial use 
+is prohibited. Do not distribute the material without written permission.
+If you publish any work based on this code, please cite the original 
+paper.
+
+
+Contact:
+
+Please address any technical questions to 
+
+  Roland Kwitt (rkwitt@cosy.sbg.ac.at), or 
+  Peter Meerwald (pmeerw@cosy.sbg.ac.at) 
+
+or write to
+
+  Andreas Uhl
+  Department of Computer Sciences
+  Universität Salzburg
+  Jakob-Haringer-Str. 2
+  A-5020 Salzburg
+  AUSTRIA
+  Telephone: ++43 (0)662 8044 6303
+  Fax: ++43 (0)662 8044 172 
+  Email: uhl@cosy.sbg.ac.at

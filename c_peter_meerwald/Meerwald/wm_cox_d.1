@@ -1,0 +1,132 @@
+.\"
+.\" wm_cox_d.1 - the *roff document processor man page source
+.\"
+.TH wm_cox_d 1 "98/07/05" "Watermarking, Version 1.0"
+.SH NAME
+.B wm_cox_d
+\- a program to extract a signature from the DCT coefficients of a watermarked image
+.SH SYNOPSIS
+.B wm_cox_d
+[
+.BI \-a \ number
+]
+[
+.B \-h
+]
+[
+.BI \-i \ ifile
+]
+[
+.BI \-n \ number
+]
+[
+.BI \-o \ ofile
+]
+[
+.BI \-q \ number
+]
+[
+.BI \-v \ number
+]
+.br
+.BI \-s \ sfile
+.I file
+.SH DESCRIPTION
+.B wm_cox_d
+is a program to extract a signature from the DCT coefficients of the watermarked image
+.I file.
+The
+.B cmp_cox_sig
+program is used to test the extracted signature against the original signature.
+The input image is in PGM (portable graymap) format.
+.PP
+If
+.I file
+or
+.I ofile
+is not specified, then standard input or standard output is
+used.
+.PP
+.B gen_cox_sig
+is used to generate a signature file,
+.B wm_cox_e
+embeds the signature into an image.
+.PP
+Please refer to Ingemar J. Cox's paper "Secure Spread Spectrum
+Watermarking for Multimedia", 1995, to get an idea about the algorithm.
+.PP
+.SH OPTIONS
+.TP
+.BI \-a \ number
+Alpha factor that determines embedding strength of the signature.
+Allows to override the setting in the signature file.
+.TP
+.B \-h
+Print a help message.
+.TP
+.BI \-i \ ifile
+The original image.
+.TP
+.BI \-o \ ofile
+Output watermarked image to the specified
+.I file
+instead of standard output.
+.TP
+.BI \-q \ number
+Set quantization/quality factor. Overrides the setting in the signature
+file.
+.TP
+.BI \-v \ number
+Verbosity level. Default value: 0.
+.TP
+.BI \-s \ sfile
+The signature file to embed into the input image. See
+.B gen_cox_sig
+(1) for a description of the file format. Mandatory parameter.
+.IR file
+Input image in PGM format to sign (watermark). Default: standard input.
+.TP
+.I
+The watermarked image file in PGM format.
+.PP
+.SH OUTPUT
+The signed (watermarked) image in PGM format is written to standard output
+or ,optionally, to
+.I ofile.
+The embedding process may take some time on large images since the DCT
+is performed on the whole image in one step (not block-wise).
+.PP
+.PP
+The output file has the following format:
+.TP
+.B CXSG
+Magic to identify file type.
+.TP
+.I number
+The length of the signature in bits.
+.TP
+.I number
+The alpha factor (embedding strength).
+.TP
+.I number
+The quantization/quality factor.
+.TP
+.I numbers
+The actual normal distributed signature values, one per line.
+.PP
+.SH AUTHOR
+Peter Meerwald. 
+Email bug reports to pmeerw@cosy.sbg.ac.at.
+.SH AVAILABILITY
+The most recent released version of
+.B wm_cox_d
+is always available
+at http://www.cosy.sbg.ac.at/~pmeerw/Watermarking or via anonymous ftp from ftp.cosy.sbg.ac.at in the
+directory /pub/people/pmeerw/Watermarking.
+.SH "SEE ALSO"
+.BR gen_cox_sig
+(1),
+.BR wm_cox_e
+(1),
+.BR cmp_cox_sig
+(1)

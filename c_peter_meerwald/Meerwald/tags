@@ -1,0 +1,723 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+A	bruyn_common.c	26;"	d	file:
+A	bruyn_common.c	4;"	d	file:
+AllFilterStruct	wavelet.h	/^typedef struct AllFilterStruct {$/;"	s
+AllFilters	wavelet.h	/^	} *AllFilters;$/;"	t	typeref:struct:AllFilterStruct
+B	bruyn_common.c	27;"	d	file:
+B	bruyn_common.c	5;"	d	file:
+BACKWARD_STEP	frid2_common.h	5;"	d
+BLOCKTYPE_HARD	bruyn_common.h	8;"	d
+BLOCKTYPE_NOISE	bruyn_common.h	10;"	d
+BLOCKTYPE_PROGRESSIVE	bruyn_common.h	9;"	d
+BLOCKTYPE_UNKNOWN	bruyn_common.h	7;"	d
+BLUE	cmp_ppm.c	7;"	d	file:
+BRUYN_COMMON_H	bruyn_common.h	2;"	d
+C	dct.c	/^double C[NJPEG][NJPEG];$/;"	v
+CATEGORY_A	bruyn_common.h	25;"	d
+CATEGORY_B	bruyn_common.h	26;"	d
+CATEGORY_VOID	bruyn_common.h	24;"	d
+CEILING_HALF	wavelet.c	657;"	d	file:
+CLASSIFICATION_1A	bruyn_common.h	29;"	d
+CLASSIFICATION_1B	bruyn_common.h	30;"	d
+CLASSIFICATION_2A	bruyn_common.h	31;"	d
+CLASSIFICATION_2B	bruyn_common.h	32;"	d
+CLASSIFICATION_A	bruyn_common.h	33;"	d
+CLASSIFICATION_B	bruyn_common.h	34;"	d
+COARSE	dwt_util.h	11;"	d
+COEFF_H	coeff.h	2;"	d
+COORD_H	coord.h	2;"	d
+Cmax	wang_common.h	/^  double Cmax;$/;"	m	struct:Subband_data_struct
+Ct	dct.c	/^double Ct[NJPEG][NJPEG];$/;"	v
+DCT_H	dct.h	2;"	d
+DIAGONAL	dwt_util.h	14;"	d
+DWT_H	dwt.h	2;"	d
+DWT_UTIL_H	dwt_util.h	2;"	d
+EPSILON	wm_bruyn_d.c	448;"	d	file:
+Entering	wavelet.h	20;"	d
+Error	wavelet.h	/^}Error;	$/;"	t	typeref:enum:__anon1
+Error_AssertionFailed	wavelet.h	/^        Error_AssertionFailed,  \/* An assertion, pre- or postcondition failed. $/;"	e	enum:__anon1
+Error_CantCloseFile	wavelet.h	/^	Error_CantCloseFile,$/;"	e	enum:__anon1
+Error_CantCreateFile	wavelet.h	/^	Error_CantCreateFile,$/;"	e	enum:__anon1
+Error_CantOpenFile	wavelet.h	/^	Error_CantOpenFile,	\/* The file cannot be opened *\/$/;"	e	enum:__anon1
+Error_CantWriteIntoFile	wavelet.h	/^        Error_CantWriteIntoFile,$/;"	e	enum:__anon1
+Error_CompressedZeroContent	wavelet.h	/^	Error_CompressedZeroContent,$/;"	e	enum:__anon1
+Error_InternalError	wavelet.h	/^	Error_InternalError$/;"	e	enum:__anon1
+Error_Limitation	wavelet.h	/^        Error_Limitation,       \/* Some limitation exceeded, e.g. a string$/;"	e	enum:__anon1
+Error_NoError	wavelet.h	/^        Error_NoError,          \/* No Error has happened. *\/$/;"	e	enum:__anon1
+Error_NotEnoughMemory	wavelet.h	/^        Error_NotEnoughMemory,   \/* We can't allocate the memory we need. *\/$/;"	e	enum:__anon1
+Error_NotImplemented	wavelet.h	/^        Error_NotImplemented,   \/* A needed part has not (yet) been $/;"	e	enum:__anon1
+Error_OriginalZeroContent	wavelet.h	/^	Error_OriginalZeroContent,$/;"	e	enum:__anon1
+Error_WidthOrHeightZero	wavelet.h	/^	Error_WidthOrHeightZero,$/;"	e	enum:__anon1
+Error_WrongFileFormat	wavelet.h	/^	Error_WrongFileFormat,$/;"	e	enum:__anon1
+FILTERG	dwt.h	8;"	d
+FILTERGi	dwt.h	10;"	d
+FILTERH	dwt.h	9;"	d
+FILTERHi	dwt.h	11;"	d
+FLOOR_HALF	wavelet.c	656;"	d	file:
+FORWARD_STEP	frid2_common.h	4;"	d
+FRID2_COMMON_H	frid2_common.h	2;"	d
+FTAntiSymm	wavelet.h	/^enum FilterType { FTNoSymm, FTSymm, FTAntiSymm};$/;"	e	enum:FilterType
+FTBiOrtho	wavelet.h	/^enum FilterGHType { FTOrtho, FTBiOrtho, FTOther};$/;"	e	enum:FilterGHType
+FTNoSymm	wavelet.h	/^enum FilterType { FTNoSymm, FTSymm, FTAntiSymm};$/;"	e	enum:FilterType
+FTOrtho	wavelet.h	/^enum FilterGHType { FTOrtho, FTBiOrtho, FTOther};$/;"	e	enum:FilterGHType
+FTOther	wavelet.h	/^enum FilterGHType { FTOrtho, FTBiOrtho, FTOther};$/;"	e	enum:FilterGHType
+FTSymm	wavelet.h	/^enum FilterType { FTNoSymm, FTSymm, FTAntiSymm};$/;"	e	enum:FilterType
+Filter	wavelet.h	/^	} *Filter;$/;"	t	typeref:struct:FilterStruct
+FilterGH	wavelet.h	/^	} *FilterGH;$/;"	t	typeref:struct:FilterGHStruct
+FilterGHStruct	wavelet.h	/^typedef struct FilterGHStruct {$/;"	s
+FilterGHType	wavelet.h	/^enum FilterGHType { FTOrtho, FTBiOrtho, FTOther};$/;"	g
+FilterMethod	wavelet.h	/^enum FilterMethod{cutoff,inv_cutoff,periodical,inv_periodical,mirror,inv_mirror};$/;"	g
+FilterStruct	wavelet.h	/^typedef struct FilterStruct {$/;"	s
+FilterType	wavelet.h	/^enum FilterType { FTNoSymm, FTSymm, FTAntiSymm};$/;"	g
+FlushTrace	wavelet.h	23;"	d
+GRAYRANGE	wm.h	37;"	d
+GRAY_H	gray.h	2;"	d
+GREEN	cmp_ppm.c	6;"	d	file:
+H	dwt.c	257;"	d	file:
+HH	dwt_util.h	9;"	d
+HL	dwt_util.h	8;"	d
+HORIZONTAL	dwt_util.h	12;"	d
+INVROOT2	dct.c	4;"	d	file:
+Image	wavelet.h	/^	} *Image;$/;"	t	typeref:struct:Image_struct
+Image_info	wavelet.h	/^	} *Image_info;$/;"	t	typeref:struct:Image_info_struct
+Image_info_struct	wavelet.h	/^typedef struct Image_info_struct {$/;"	s
+Image_struct	wavelet.h	/^typedef struct Image_struct {$/;"	s
+Image_tree	wavelet.h	/^	} *Image_tree;$/;"	t	typeref:struct:Image_tree_struct
+Image_tree_struct	wavelet.h	/^typedef struct Image_tree_struct {$/;"	s
+Information_Cost	wavelet.h	/^enum Information_Cost{threshold,log_energy,entropy,norml,norml2,gauss_markov,$/;"	g
+IntImage	wavelet.h	/^	} *IntImage;$/;"	t	typeref:struct:IntImage_struct
+IntImage_struct	wavelet.h	/^typedef struct IntImage_struct {$/;"	s
+IntPixel	wavelet.h	/^typedef unsigned int IntPixel;$/;"	t
+JPEG_chromin_quant_table	dct.c	/^static const unsigned int JPEG_chromin_quant_table[NJPEG][NJPEG] = {$/;"	v	file:
+JPEG_lumin_quant_table	dct.c	/^static const unsigned int JPEG_lumin_quant_table[NJPEG][NJPEG] = {$/;"	v	file:
+KIM_COMMON_H	kim_common.h	2;"	d
+LARGE	wang_common.c	155;"	d	file:
+LH	dwt_util.h	7;"	d
+LL	dwt_util.h	6;"	d
+LUMINANCE	cmp_ppm.c	4;"	d	file:
+Leaving	wavelet.h	21;"	d
+LeavingErr	wavelet.h	22;"	d
+M	dct.c	/^int M;$/;"	v
+MAX	wavelet.h	210;"	d
+MAX	wm.h	45;"	d
+MAXNALPHA	param_stuff.c	3;"	d	file:
+MAXPATHLEN	wm.h	15;"	d
+MAX_LINE	wavelet.c	1061;"	d	file:
+MIN	wavelet.h	206;"	d
+MIN	wm.h	49;"	d
+MIN_DIFF	wm_kund3_e.c	254;"	d	file:
+MOD	wavelet.c	659;"	d	file:
+M_PI	wm.h	13;"	d
+N	dct.c	/^int N;$/;"	v
+NBITSIGNATURE	signature.h	7;"	d
+NBITSTOBYTES	wm.h	34;"	d
+NBYTESTOBITS	wm.h	35;"	d
+NJPEG	dct.h	24;"	d
+NPATTERN	bruyn_common.h	36;"	d
+NPATTERN_USAGE	bruyn_common.h	37;"	d
+NSIGNATURE	signature.h	6;"	d
+OPTIONS	Makefile	/^OPTIONS=-DPARAM_STUFF -DPOLLEN_STUFF$/;"	m
+PIXELRANGE	wm.h	38;"	d
+Pixel	wavelet.h	/^typedef double Pixel;$/;"	t
+PostCondition	wavelet.h	28;"	d
+PreCondition	wavelet.h	27;"	d
+Quantum	dct.c	/^int Quantum[NJPEG][NJPEG];$/;"	v
+RED	cmp_ppm.c	5;"	d	file:
+ROUND	wm.h	29;"	d
+SIGN	wm.h	57;"	d
+SIGNATURE_H	signature.h	2;"	d
+SORT_H	sort.h	2;"	d
+STEP	wm_kund3_d.c	213;"	d	file:
+STEP	wm_kund3_e.c	222;"	d	file:
+SWAP	dct.c	5;"	d	file:
+SWAP	wm_kund2_d.c	266;"	d	file:
+SWAP	wm_kund2_e.c	264;"	d	file:
+SWAP	wm_kund3_d.c	247;"	d	file:
+SWAP	wm_kund3_e.c	241;"	d	file:
+SWAP	wm_xie2_d.c	244;"	d	file:
+SWAP	wm_xie2_e.c	243;"	d	file:
+SWAP	wm_xie_d.c	234;"	d	file:
+SWAP	wm_xie_e.c	232;"	d	file:
+SWAP_DOUBLE	sort.c	102;"	d	file:
+SWAP_GRAY	sort.c	3;"	d	file:
+Segments	wavelet.h	/^	} *Segments;$/;"	t	typeref:struct:SegmentsStruct
+SegmentsStruct	wavelet.h	/^typedef struct SegmentsStruct	{$/;"	s
+StartTrace	wavelet.h	14;"	d
+StopTrace	wavelet.h	15;"	d
+Subband_data	wang_common.h	/^} *Subband_data;$/;"	t	typeref:struct:Subband_data_struct
+Subband_data_struct	wang_common.h	/^typedef struct Subband_data_struct {$/;"	s
+T	wang_common.h	/^  double T;$/;"	m	struct:Subband_data_struct
+THRESHOLD_NOISE	bruyn_common.h	13;"	d
+THRESHOLD_NOISE_USAGE	bruyn_common.h	15;"	d
+THRESHOLD_SLOPE	bruyn_common.h	14;"	d
+THRESHOLD_SLOPE_USAGE	bruyn_common.h	16;"	d
+Trace	wavelet.h	17;"	d
+TraceVar	wavelet.h	18;"	d
+VERTICAL	dwt_util.h	13;"	d
+WANG_COMMON_H	wang_common.h	2;"	d
+WAVELET_H	wavelet.h	306;"	d
+WM_H	wm.h	2;"	d
+Warning	wavelet.h	25;"	d
+ZONE_1	bruyn_common.h	20;"	d
+ZONE_2	bruyn_common.h	21;"	d
+ZONE_VOID	bruyn_common.h	19;"	d
+Zigzag_data	wavelet.h	/^	} *Zigzag_data;$/;"	t	typeref:struct:Zigzag_data_struct
+Zigzag_data_struct	wavelet.h	/^typedef struct Zigzag_data_struct {$/;"	s
+_binstr_to_sig	signature.c	/^int _binstr_to_sig(const char *binstr, char *sig, int *bytes, int *bits) {$/;"	f
+_get_signature_bit	signature.c	/^int _get_signature_bit(char *s, int lim, int n) {$/;"	f
+_set_signature_bit	signature.c	/^void _set_signature_bit(char *s, int limit, int n, int v) {$/;"	f
+_sig_to_binstr	signature.c	/^int _sig_to_binstr(char *binstr, char *sig, int bits) {$/;"	f
+_sort_coeffs	sort.c	/^void _sort_coeffs(double *l, double *r) {$/;"	f
+_sort_grays	sort.c	/^void _sort_grays(gray *l, gray *r) {$/;"	f
+abs_list	wavelet.c	/^static void abs_list(Pixel *list,int list_size)$/;"	f	file:
+add_coord	coord.c	/^int add_coord(struct coords *c, int x, int y) {$/;"	f
+alloc_coeffs	coeff.c	/^double **alloc_coeffs(int cols, int rows) {$/;"	f
+alloc_coeffs_8x8	coeff.c	/^double **alloc_coeffs_8x8() {$/;"	f
+alloc_coords	coord.c	/^struct coords *alloc_coords(int n) {$/;"	f
+alloc_grays	gray.c	/^gray **alloc_grays(int cols, int rows) {$/;"	f
+alloc_grays_8x8	gray.c	/^gray **alloc_grays_8x8() {$/;"	f
+alloc_subband	wang_common.c	/^Subband_data alloc_subband(int type, Image_tree tree) {$/;"	f
+best_basis	wavelet.c	/^Image_tree best_basis(Image original,int level,FilterGH *flt,$/;"	f
+best_basis_min	wavelet.c	1346;"	d	file:
+best_level	wavelet.c	/^Image_tree best_level(Image original,int maxlevel,int *bestlevel,FilterGH *flt,enum FilterMethod method,$/;"	f
+beta	wang_common.h	/^  double beta;$/;"	m	struct:Subband_data_struct
+binstr_to_sig	signature.c	/^int binstr_to_sig(const char *binstr) {$/;"	f
+binstr_to_sig1	signature.c	/^int binstr_to_sig1(const char *binstr) {$/;"	f
+binstr_to_sig2	signature.c	/^int binstr_to_sig2(const char *binstr) {$/;"	f
+bitrev	dct.c	/^static void bitrev(double *f, int len)$/;"	f	file:
+bpp	wavelet.h	/^	int bpp;    \/* bits per pixel of original image *\/$/;"	m	struct:Image_struct
+bpp	wavelet.h	/^	int bpp;    \/* bits per pixel of original image *\/$/;"	m	struct:IntImage_struct
+build_image	wavelet.c	/^Image build_image(Image_tree quadtree,int width,int height)$/;"	f
+bzero	wm.c	/^void bzero(char *b, size_t length) {$/;"	f
+calc__subband	dwt_util.c	/^static void calc__subband(Image_tree p, Image_tree q, double *min, double *max, double *error) {$/;"	f	file:
+calc_level_alpha_detail	kim_common.c	/^double calc_level_alpha_detail(double alpha, int maxlevels, int level, int verbose) {$/;"	f
+calc_level_threshold	kim_common.c	/^double calc_level_threshold(double max_coeff, int verbose) {$/;"	f
+calc_subband	dwt_util.c	/^void calc_subband(Image_tree p, Image_tree q, int type, double *min, double *max, double *error) {$/;"	f
+calc_subband_location	dwt_util.c	/^void calc_subband_location(int cols, int rows, int type, int level, int *col, int *row) {$/;"	f
+calc_subband_threshold	wang_common.c	/^void calc_subband_threshold(Subband_data subband) {$/;"	f
+calc_subband_wp	dwt_util.c	/^void calc_subband_wp(Image_tree p, Image_tree q, char *name, double *min, double *max, double *error) {$/;"	f
+calc_subband_wp_level	dwt_util.c	/^int calc_subband_wp_level(char *name){$/;"	f
+calc_subband_wp_location	dwt_util.c	/^void calc_subband_wp_location(int cols, int rows, char *name, int *col, int *row) {$/;"	f
+calc_subbands_threshold	wang_common.c	/^void calc_subbands_threshold() {$/;"	f
+clear_image	wavelet.c	/^void clear_image(Image img)$/;"	f
+coarse	wavelet.h	/^	struct Image_tree_struct *coarse,*horizontal,*vertical,*diagonal,*doubletree;$/;"	m	struct:Image_tree_struct	typeref:struct:Image_tree_struct::Image_tree_struct
+codec_data	wavelet.h	/^	void *codec_data;$/;"	m	struct:Image_tree_struct
+comp	wavelet.c	/^int comp(const Pixel *x,const Pixel *y)$/;"	f
+comp_area	wavelet.c	/^static Pixel comp_area(Image_tree tree,int size,int p,double f)$/;"	f	file:
+comp_number	wavelet.c	/^static Pixel comp_number(Image_tree tree,int size,int p,double f)$/;"	f	file:
+compression_area	wavelet.h	/^		compression_area,compression_areaq,sdiscrepancy,discrepancy,concentration};$/;"	e	enum:Information_Cost
+compression_areaq	wavelet.h	/^		compression_area,compression_areaq,sdiscrepancy,discrepancy,concentration};$/;"	e	enum:Information_Cost
+compression_number	wavelet.h	/^		shanon,weak_l,weak_lq,compression_number,compression_numberq,$/;"	e	enum:Information_Cost
+compression_numberq	wavelet.h	/^		shanon,weak_l,weak_lq,compression_number,compression_numberq,$/;"	e	enum:Information_Cost
+compute_best	wavelet.c	/^static int compute_best(Image_tree tree,int level,int max_level,FilterGH *flt,$/;"	f	file:
+compute_concentration	wavelet.c	/^static Pixel compute_concentration(Image_tree tree,int size)$/;"	f	file:
+compute_discrepancy	wavelet.c	/^static Pixel compute_discrepancy(Image_tree tree,int size)$/;"	f	file:
+compute_entropy	wavelet.c	/^static double compute_entropy(Image img,enum Information_Cost cost,double epsilon)$/;"	f	file:
+compute_levels	wavelet.c	/^static void compute_levels(Image_tree tree,double *entropies,enum Information_Cost cost,double epsilon)$/;"	f	file:
+compute_non_additive	wavelet.c	/^static Pixel compute_non_additive(Image_tree tree,int size,enum Information_Cost cost,double epsilon,int down)$/;"	f	file:
+compute_sdiscrepancy	wavelet.c	/^static Pixel compute_sdiscrepancy(Image_tree tree,int size)$/;"	f	file:
+concentration	wavelet.h	/^		compression_area,compression_areaq,sdiscrepancy,discrepancy,concentration};$/;"	e	enum:Information_Cost
+convolute_lines	wavelet.c	/^static int convolute_lines(Image output,Image input,Filter flt,enum FilterMethod method)$/;"	f	file:
+convolute_rows	wavelet.c	/^static int convolute_rows(Image output,Image input,Filter flt,enum FilterMethod method)$/;"	f	file:
+coord	coord.h	/^struct coord {$/;"	s
+coords	coord.h	/^struct coords {$/;"	s
+copy_coeffs_from_dwt	dwt_util.c	/^void copy_coeffs_from_dwt(double ** block_coeffs, double ** dwt_coeffs,$/;"	f
+copy_coeffs_to_dwt	dwt_util.c	/^void copy_coeffs_to_dwt(double ** dwt_coeffs, double ** block_coeffs,$/;"	f
+copy_grays_from_block	gray.c	/^void copy_grays_from_block(gray ** image_grays, gray ** block_grays, int$/;"	f
+copy_grays_to_block	gray.c	/^void copy_grays_to_block(gray ** block_grays, gray ** image_grays, int c, int r, int w, int h) {$/;"	f
+copy_into_image	wavelet.c	/^void copy_into_image(Image img1,Image img2,int x,int y)$/;"	f
+copy_into_intimage	wavelet.c	/^void copy_into_intimage(IntImage img1,IntImage img2,int x,int y)$/;"	f
+copy_part_of_image	wavelet.c	/^void copy_part_of_image(Image img1,Image img2,int x,int y)$/;"	f
+copy_part_of_image_into_image	wavelet.c	/^void copy_part_of_image_into_image(Image dest_img, int dest_x, int dest_y,$/;"	f
+count	coord.h	/^  int count;$/;"	m	struct:coords
+count	wavelet.h	/^	int count;$/;"	m	struct:AllFilterStruct
+cutoff	wavelet.h	/^enum FilterMethod{cutoff,inv_cutoff,periodical,inv_periodical,mirror,inv_mirror};$/;"	e	enum:FilterMethod
+data	wavelet.h	/^		int *data;$/;"	m	struct:SegmentsStruct
+data	wavelet.h	/^	IntPixel *data;$/;"	m	struct:IntImage_struct
+data	wavelet.h	/^	Pixel * data;$/;"	m	struct:FilterStruct
+data	wavelet.h	/^	Pixel *data;$/;"	m	struct:Image_struct
+dct_NxM_costable_x	dct.c	/^double **dct_NxM_costable_x = NULL;$/;"	v
+dct_NxM_costable_y	dct.c	/^double **dct_NxM_costable_y = NULL;$/;"	v
+dct_NxN_costable	dct.c	/^double *dct_NxN_costable = NULL;$/;"	v
+dct_NxN_log2N	dct.c	/^int dct_NxN_log2N = 0;$/;"	v
+dct_NxN_tmp	dct.c	/^double *dct_NxN_tmp = NULL;$/;"	v
+decompose_all	wavelet.c	/^int decompose_all(Image_tree tree,int maxlevel,FilterGH *flt,enum FilterMethod method,$/;"	f
+decompose_to_level	wavelet.c	/^Image_tree decompose_to_level(Image original,int level,FilterGH *flt,enum FilterMethod method)$/;"	f
+decomposition	wavelet.c	/^static int decomposition(Image t_img,Image coarse,Image horizontal,Image vertical,$/;"	f	file:
+dequantize_8x8	dct.c	/^void dequantize_8x8(double **transform) {$/;"	f
+detect_low_freq	frid2_common.c	/^double detect_low_freq(double **dcts, int cols, int rows, double alpha, double beta, int verbose) {$/;"	f
+detect_med_freq	frid2_common.c	/^double detect_med_freq(double **dcts, int cols, int rows, int seed, int verbose) {$/;"	f
+diagonal	wavelet.h	/^	struct Image_tree_struct *coarse,*horizontal,*vertical,*diagonal,*doubletree;$/;"	m	struct:Image_tree_struct	typeref:struct:Image_tree_struct::
+dir	wavelet.h	/^	enum zigzag_direction dir;$/;"	m	struct:Zigzag_data_struct	typeref:enum:Zigzag_data_struct::zigzag_direction
+discrepancy	wavelet.h	/^		compression_area,compression_areaq,sdiscrepancy,discrepancy,concentration};$/;"	e	enum:Information_Cost
+done_dwt	dwt.c	/^void done_dwt() {$/;"	f
+doubletree	wavelet.h	/^	struct Image_tree_struct *coarse,*horizontal,*vertical,*diagonal,*doubletree;$/;"	m	struct:Image_tree_struct	typeref:struct:Image_tree_struct::
+doubletree_min	wavelet.c	1345;"	d	file:
+dwt_allfilters	dwt.c	/^AllFilters dwt_allfilters;$/;"	v
+dwt_cols	dwt.c	/^int dwt_cols;$/;"	v
+dwt_filter	dwt.c	/^int dwt_filter;$/;"	v
+dwt_filters	dwt.c	/^FilterGH *dwt_filters = NULL;$/;"	v
+dwt_levels	dwt.c	/^int dwt_levels;$/;"	v
+dwt_method	dwt.c	/^int dwt_method;$/;"	v
+dwt_param_filter	dwt.c	/^void dwt_param_filter(double alpha[], int param_len[]) {$/;"	f
+dwt_pollen_filter	dwt.c	/^void dwt_pollen_filter(double alpha, double beta) {$/;"	f
+dwt_rows	dwt.c	/^int dwt_rows;$/;"	v
+embed_low_freq	frid2_common.c	/^void embed_low_freq(double **dcts, int cols, int rows, double alpha, int verbose) {$/;"	f
+embed_med_freq	frid2_common.c	/^void embed_med_freq(double **dcts, int cols, int rows, double gamma, int seed, int verbose) {$/;"	f
+end	wavelet.h	/^	int start,end;$/;"	m	struct:FilterStruct
+entropy	wavelet.h	/^	double entropy;$/;"	m	struct:Image_tree_struct
+entropy	wavelet.h	/^enum Information_Cost{threshold,log_energy,entropy,norml,norml2,gauss_markov,$/;"	e	enum:Information_Cost
+err_GetErrorMessage	wavelet.c	/^char * err_GetErrorMessage(Error err)$/;"	f
+err_SimpleMessage	wavelet.c	/^void err_SimpleMessage(char *message)$/;"	f
+extract_subband	wm_kim_d.c	/^int extract_subband(Image_tree s, Image_tree t, int name, double alpha, double watermark[], double threshold, int w, int n, int verbose) {$/;"	f
+extract_subband	wm_xia_d.c	/^int extract_subband(Image_tree s, Image_tree t, int name, double alpha, double watermark[], int n, int verbose) {$/;"	f
+fct_noscale	dct.c	/^static void fct_noscale(double *f)$/;"	f	file:
+fdct_8x8	dct.c	/^void fdct_8x8(gray **input, double **output) {$/;"	f
+fdct_NxM	dct.c	/^void fdct_NxM(gray **pixels, double **dcts) {$/;"	f
+fdct_NxN	dct.c	/^void fdct_NxN(gray **pixels, double **dcts) {$/;"	f
+fdct_block_8x8	dct.c	/^void fdct_block_8x8(gray **input, int col, int row, double **output) {$/;"	f
+fdct_inplace_NxN	dct.c	/^void fdct_inplace_NxN(double **coeffs) {$/;"	f
+fdwt	dwt.c	/^Image_tree fdwt(gray **pixels) {$/;"	f
+fdwt_wp	dwt.c	/^Image_tree fdwt_wp(gray **pixels) {$/;"	f
+figure_orig_coeff	wang_common.c	/^Pixel figure_orig_coeff(double T, double alpha, double beta, Pixel coeff) {$/;"	f
+filter	wavelet.h	/^	FilterGH *filter;$/;"	m	struct:AllFilterStruct
+filter_cutoff	wavelet.c	/^int filter_cutoff(Image in, int in_start, int in_len, int in_step,$/;"	f
+filter_file	dwt.c	/^char filter_file[MAXPATHLEN] = "";$/;"	v
+filter_inv_cutoff	wavelet.c	/^int filter_inv_cutoff(Image in, int in_start, int in_len, int in_step,$/;"	f
+filter_inv_mirror	wavelet.c	/^int filter_inv_mirror(Image in, int in_start, int in_len, int in_step,$/;"	f
+filter_inv_periodical	wavelet.c	/^int filter_inv_periodical(Image in, int in_start, int in_len, int in_step,$/;"	f
+filter_mirror	wavelet.c	/^int filter_mirror(Image in, int in_start, int in_len, int in_step,$/;"	f
+filter_periodical	wavelet.c	/^int filter_periodical(Image in, int in_start, int in_len, int in_step,$/;"	f
+find_deepest_level	wavelet.c	/^int find_deepest_level(int width,int height)$/;"	f
+find_level_largest_coeff	kim_common.c	/^double find_level_largest_coeff(Image_tree p, int verbose) {$/;"	f
+find_subband_largest_coeff	kim_common.c	/^double find_subband_largest_coeff(Image_tree s, int subband, int verbose) {$/;"	f
+flag	wavelet.h	/^	int flag;$/;"	m	struct:Image_tree_struct
+free_coeffs	coeff.c	/^void free_coeffs(double **coeffs) {$/;"	f
+free_coords	coord.c	/^void free_coords(struct coords *c) {$/;"	f
+free_grays	gray.c	/^void free_grays(gray **grays) {$/;"	f
+free_image	wavelet.c	/^void free_image(Image img)$/;"	f
+free_image_tree	wavelet.c	/^void free_image_tree(Image_tree t)$/;"	f
+free_intimage	wavelet.c	/^void free_intimage(IntImage img)$/;"	f
+free_levels	wavelet.c	/^static void free_levels(Image_tree tree,int best)$/;"	f	file:
+free_subband	wang_common.c	/^void free_subband(Subband_data subband) {$/;"	f
+free_subbands	wang_common.c	/^void free_subbands() {$/;"	f
+fwd_butterflies	dct.c	/^static void fwd_butterflies(double *f)$/;"	f	file:
+fwd_sums	dct.c	/^static void fwd_sums(double *f)$/;"	f	file:
+g	wavelet.h	/^	Filter g, h, gi, hi;$/;"	m	struct:FilterGHStruct
+gauss_markov	wavelet.h	/^enum Information_Cost{threshold,log_energy,entropy,norml,norml2,gauss_markov,$/;"	e	enum:Information_Cost
+gen_param_filter	dwt.c	/^int gen_param_filter(double *filter, int n, double alpha[], int which) {$/;"	f
+gen_pollen_filter	dwt.c	/^int gen_pollen_filter(double *filter, double alpha, double beta, int which) {$/;"	f
+get_absolute_image_scaled	wavelet.c	/^Image get_absolute_image_scaled(Image img)$/;"	f
+get_difference_image	wavelet.c	/^Image get_difference_image(Image image1, Image image2)$/;"	f
+get_dwt_coeff	dwt_util.c	/^Pixel get_dwt_coeff(Image_tree dwt, int level, int type, int coeff) {$/;"	f
+get_dwt_data	dwt_util.c	/^Pixel *get_dwt_data(Image_tree dwt, int level, int type) {$/;"	f
+get_dwt_image	dwt_util.c	/^Image get_dwt_image(Image_tree dwt, int level, int type) {$/;"	f
+get_dwt_location	dwt_util.c	/^Pixel get_dwt_location(Image_tree dwt, int level, int type, int col, int row) {$/;"	f
+get_dwt_subband	dwt_util.c	/^Image_tree get_dwt_subband(Image_tree dwt, int level, int type) {$/;"	f
+get_filter_center	wavelet.c	/^Pixel get_filter_center(Filter f)$/;"	f
+get_image_infos	wavelet.c	/^void get_image_infos(Image image, Image_info info)$/;"	f
+get_intimage_infos	wavelet.c	/^void get_intimage_infos(IntImage image, IntPixel *min, IntPixel *max, Pixel *avg, Pixel *var)$/;"	f
+get_intpixel	wavelet.h	139;"	d
+get_next_line	wavelet.c	/^static int get_next_line(FILE *f, char *c)$/;"	f	file:
+get_pixel	wavelet.h	147;"	d
+get_pixel_adr	wavelet.h	155;"	d
+get_signature1_bit	signature.c	/^int get_signature1_bit(int n) {$/;"	f
+get_signature2_bit	signature.c	/^int get_signature2_bit(int n) {$/;"	f
+get_signature_bit	signature.c	/^int get_signature_bit(int n) {$/;"	f
+get_subband_coeff	wang_common.c	/^Pixel get_subband_coeff(Subband_data subband, int coeff) {$/;"	f
+gi	wavelet.h	/^	Filter g, h, gi, hi;$/;"	m	struct:FilterGHStruct
+h	wavelet.h	/^	Filter g, h, gi, hi;$/;"	m	struct:FilterGHStruct
+h	wavelet.h	/^	int x,y,w,h;$/;"	m	struct:Zigzag_data_struct
+height	wang_common.h	/^  int height;$/;"	m	struct:Subband_data_struct
+height	wavelet.h	/^		int width,height; \/* segment width & height*\/$/;"	m	struct:SegmentsStruct
+height	wavelet.h	/^	int width, height;$/;"	m	struct:IntImage_struct
+height	wavelet.h	/^	int width,height;$/;"	m	struct:Image_struct
+hi	wavelet.h	/^	Filter g, h, gi, hi;$/;"	m	struct:FilterGHStruct
+hipass	wavelet.h	/^	int hipass;$/;"	m	struct:FilterStruct
+horizontal	wavelet.h	/^	struct Image_tree_struct *coarse,*horizontal,*vertical,*diagonal,*doubletree;$/;"	m	struct:Image_tree_struct	typeref:struct:Image_tree_struct::
+idct_8x8	dct.c	/^void idct_8x8(double **input, gray **output) {$/;"	f
+idct_NxM	dct.c	/^void idct_NxM(double **dcts, gray **pixels) {$/;"	f
+idct_NxN	dct.c	/^void idct_NxN(double **dcts, gray **pixels) {$/;"	f
+idct_block_8x8	dct.c	/^void idct_block_8x8(double **input, gray **output, int col, int row) {$/;"	f
+idct_inplace_NxN	dct.c	/^void idct_inplace_NxN(double **coeffs) {$/;"	f
+idwt	dwt.c	/^void idwt(Image_tree dwts, gray **pixels) {$/;"	f
+idwt_wp	dwt.c	/^void idwt_wp(Image_tree dwts, gray **pixels) {$/;"	f
+ifct_noscale	dct.c	/^static void ifct_noscale(double *f)$/;"	f	file:
+image	wang_common.h	/^  Image image;$/;"	m	struct:Subband_data_struct
+image	wavelet.h	/^	Image image;$/;"	m	struct:Image_tree_struct
+image_to_intimage	wavelet.c	/^IntImage image_to_intimage(Image i)$/;"	f
+init_coords	coord.c	/^int init_coords(struct coords *c, int n) {$/;"	f
+init_dct_8x8	dct.c	/^void init_dct_8x8() {$/;"	f
+init_dct_NxM	dct.c	/^void init_dct_NxM(int cols, int rows) {$/;"	f
+init_dct_NxN	dct.c	/^void init_dct_NxN(int width, int height) {$/;"	f
+init_dwt	dwt.c	/^void init_dwt(int cols, int rows, const char *filter_name, int filter, int level, int method) {$/;"	f
+init_quantum_8x8	dct.c	/^void init_quantum_8x8(int quality) {$/;"	f
+init_quantum_JPEG_chromin	dct.c	/^void init_quantum_JPEG_chromin(int quality) {$/;"	f
+init_quantum_JPEG_lumin	dct.c	/^void init_quantum_JPEG_lumin(int quality) {$/;"	f
+init_signature1_bits	signature.c	/^void init_signature1_bits() {$/;"	f
+init_signature2_bits	signature.c	/^void init_signature2_bits() {$/;"	f
+init_signature_bits	signature.c	/^void init_signature_bits() {$/;"	f
+init_subbands	wang_common.c	/^void init_subbands(Image_tree tree) {$/;"	f
+init_zigzag	wavelet.c	/^void init_zigzag(Zigzag_data zz, int width, int height)$/;"	f
+initcosarray	dct.c	/^static void initcosarray()$/;"	f	file:
+intimage_to_image	wavelet.c	/^Image intimage_to_image(IntImage i)$/;"	f
+inv_butterflies	dct.c	/^static void inv_butterflies(double *f)$/;"	f	file:
+inv_cutoff	wavelet.h	/^enum FilterMethod{cutoff,inv_cutoff,periodical,inv_periodical,mirror,inv_mirror};$/;"	e	enum:FilterMethod
+inv_decomposition	wavelet.c	/^static int inv_decomposition(Image sum,Image coarse,Image horizontal,Image vertical,$/;"	f	file:
+inv_mirror	wavelet.h	/^enum FilterMethod{cutoff,inv_cutoff,periodical,inv_periodical,mirror,inv_mirror};$/;"	e	enum:FilterMethod
+inv_periodical	wavelet.h	/^enum FilterMethod{cutoff,inv_cutoff,periodical,inv_periodical,mirror,inv_mirror};$/;"	e	enum:FilterMethod
+inv_sums	dct.c	/^static void inv_sums(double *f)$/;"	f	file:
+inv_transform	wavelet.c	/^Image inv_transform(Image_tree tree,FilterGH *flt,$/;"	f
+is_in_list	wavelet.c	/^static int is_in_list(int *list,int len, int x)$/;"	f	file:
+is_middle_frequency_coeff_8x8	dct.c	/^int is_middle_frequency_coeff_8x8(int coeff) {$/;"	f
+len	wavelet.h	/^	int len;$/;"	m	struct:FilterStruct
+level	wang_common.h	/^  int level;$/;"	m	struct:Subband_data_struct
+level	wavelet.h	/^	int level;$/;"	m	struct:Image_tree_struct
+load_filters	wavelet.c	/^AllFilters load_filters(char *name)$/;"	f
+load_image	wavelet.c	/^Image load_image(char *file, int max_val)$/;"	f
+load_intimage	wavelet.c	/^IntImage load_intimage(char *file, int max_val)$/;"	f
+log_energy	wavelet.h	/^enum Information_Cost{threshold,log_energy,entropy,norml,norml2,gauss_markov,$/;"	e	enum:Information_Cost
+lookup_pattern	bruyn_common.c	/^gray lookup_pattern(int pattern, int c, int r) {$/;"	f
+main	cmp_bruyn_sig.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	cmp_corvi_sig.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	cmp_cox_sig.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	cmp_dct.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	cmp_dct8x8.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	cmp_dugad_sig.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	cmp_dwt.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	cmp_frid2_sig.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	cmp_kim_sig.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	cmp_koch_sig.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	cmp_kund2_sig.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	cmp_kund3_sig.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	cmp_kund_sig.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	cmp_pgm.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	cmp_ppm.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	cmp_wang_sig.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	cmp_xia_sig.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	cmp_xie2_sig.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	cmp_xie_sig.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	cmp_zhu_sig.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	gen_bruyn_sig.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	gen_corvi_sig.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	gen_cox_sig.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	gen_dugad_sig.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	gen_frid2_sig.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	gen_kim_sig.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	gen_koch_sig.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	gen_kund2_sig.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	gen_kund3_sig.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	gen_kund_sig.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	gen_wang_sig.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	gen_xia_sig.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	gen_xie2_sig.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	gen_xie_sig.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	gen_zhu_sig.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	wm_bruyn_d.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	wm_bruyn_e.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	wm_corvi_d.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	wm_corvi_e.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	wm_corvi_s.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	wm_cox_d.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	wm_cox_e.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	wm_dugad_d.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	wm_dugad_e.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	wm_frid2_d.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	wm_frid2_e.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	wm_kim_a.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	wm_kim_d.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	wm_kim_e.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	wm_koch_d.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	wm_koch_e.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	wm_kund2_d.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	wm_kund2_e.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	wm_kund3_d.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	wm_kund3_e.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	wm_kund_d.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	wm_kund_e.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	wm_wang_d.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	wm_wang_e.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	wm_xia_d.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	wm_xia_e.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	wm_xie2_d.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	wm_xie2_e.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	wm_xie_d.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	wm_xie_e.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	wm_zhu_d.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	wm_zhu_e.c	/^int main(int argc, char *argv[]) {$/;"	f
+mark_subband	wm_kim_a.c	/^int mark_subband(Image_tree s, int name, double alpha, double watermark[], double threshold, int w, int n, int verbose) {$/;"	f
+mark_subband	wm_kim_e.c	/^int mark_subband(Image_tree s, int name, double alpha, double watermark[], double threshold, int w, int n, int verbose) {$/;"	f
+mark_subband	wm_xia_e.c	/^void mark_subband(Image_tree s, int name, double alpha, double watermark[], int n, int verbose) {$/;"	f
+mark_subband_coeff	wang_common.c	/^void mark_subband_coeff(Subband_data subband, int coeff) {$/;"	f
+max	coord.h	/^  int max;$/;"	m	struct:coords
+max	wavelet.h	/^	Pixel min,max,mean,var,rms;$/;"	m	struct:Image_info_struct
+max_val	wavelet.h	/^	IntPixel min_val,max_val;   \/* range of values in data *\/$/;"	m	struct:IntImage_struct
+max_val	wavelet.h	/^	Pixel min_val,max_val;   \/* range of pixel-values in data *\/$/;"	m	struct:Image_struct
+mean	wavelet.h	/^	Pixel min,max,mean,var,rms;$/;"	m	struct:Image_info_struct
+min	wavelet.h	/^	Pixel min,max,mean,var,rms;$/;"	m	struct:Image_info_struct
+min_val	wavelet.h	/^	IntPixel min_val,max_val;   \/* range of values in data *\/$/;"	m	struct:IntImage_struct
+min_val	wavelet.h	/^	Pixel min_val,max_val;   \/* range of pixel-values in data *\/$/;"	m	struct:Image_struct
+mirror	wavelet.h	/^enum FilterMethod{cutoff,inv_cutoff,periodical,inv_periodical,mirror,inv_mirror};$/;"	e	enum:FilterMethod
+n_signature	signature.h	/^int n_signature;$/;"	v
+n_signature1	signature.h	/^int n_signature1;$/;"	v
+n_signature2	signature.h	/^int n_signature2;$/;"	v
+n_subbands	wang_common.h	/^int n_subbands;$/;"	v
+name	wavelet.h	/^	char *name;$/;"	m	struct:FilterGHStruct
+nbit_signature	signature.h	/^int nbit_signature;$/;"	v
+nbit_signature1	signature.h	/^int nbit_signature1;$/;"	v
+nbit_signature2	signature.h	/^int nbit_signature2;$/;"	v
+new_filter	wavelet.c	/^Filter new_filter(int size)$/;"	f
+new_image	wavelet.c	/^Image new_image(int width, int height)$/;"	f
+new_image_tree	wavelet.c	/^Image_tree new_image_tree()$/;"	f
+new_intimage	wavelet.c	/^IntImage new_intimage(int width, int height)$/;"	f
+next_line_int	wavelet.c	/^static int next_line_int(FILE *f, char *tag, int *out)$/;"	f	file:
+next_line_str	wavelet.c	/^static int next_line_str(FILE *f, char *tag, char *out)$/;"	f	file:
+next_line_str_alloc	wavelet.c	/^static int next_line_str_alloc(FILE *f, char *tag, char **out)$/;"	f	file:
+next_zigzag	wavelet.c	/^void next_zigzag(Zigzag_data zz)$/;"	f
+norml	wavelet.h	/^enum Information_Cost{threshold,log_energy,entropy,norml,norml2,gauss_markov,$/;"	e	enum:Information_Cost
+norml2	wavelet.h	/^enum Information_Cost{threshold,log_energy,entropy,norml,norml2,gauss_markov,$/;"	e	enum:Information_Cost
+normq	wavelet.c	/^static Pixel normq(Image_tree tree)$/;"	f	file:
+periodical	wavelet.h	/^enum FilterMethod{cutoff,inv_cutoff,periodical,inv_periodical,mirror,inv_mirror};$/;"	e	enum:FilterMethod
+print_coeffs	coeff.c	/^void print_coeffs(double **coeffs, int c, int r, int w, int h) {$/;"	f
+print_coeffs_8x8	coeff.c	/^void print_coeffs_8x8(double **coeffs) {$/;"	f
+print_grays	gray.c	/^void print_grays(gray **grays, int c, int r, int w, int h) {$/;"	f
+print_grays_8x8	gray.c	/^void print_grays_8x8(gray **grays) {$/;"	f
+print_subband_psnr	cmp_dwt.c	/^void print_subband_psnr(int type, int level, double error, int cols, int rows, double min, double max, FILE *print) {$/;"	f
+process_subband_fixed	cmp_dwt.c	/^void process_subband_fixed(gray **output, int cols, int rows, Image_tree p, Image_tree q, int type, double m) {$/;"	f
+process_subband_var	cmp_dwt.c	/^void process_subband_var(gray **output, int cols, int rows, Image_tree p, Image_tree q, int type, double min, double max, gray maxval) {$/;"	f
+progname	cmp_bruyn_sig.c	/^char *progname;$/;"	v
+progname	cmp_corvi_sig.c	/^char *progname;$/;"	v
+progname	cmp_cox_sig.c	/^char *progname;$/;"	v
+progname	cmp_dct.c	/^char *progname;$/;"	v
+progname	cmp_dct8x8.c	/^char *progname;$/;"	v
+progname	cmp_dugad_sig.c	/^char *progname;$/;"	v
+progname	cmp_dwt.c	/^char *progname;$/;"	v
+progname	cmp_frid2_sig.c	/^char *progname;$/;"	v
+progname	cmp_kim_sig.c	/^char *progname;$/;"	v
+progname	cmp_koch_sig.c	/^char *progname;$/;"	v
+progname	cmp_kund2_sig.c	/^char *progname;$/;"	v
+progname	cmp_kund3_sig.c	/^char *progname;$/;"	v
+progname	cmp_pgm.c	/^char *progname;$/;"	v
+progname	cmp_ppm.c	/^char *progname;$/;"	v
+progname	cmp_wang_sig.c	/^char *progname;$/;"	v
+progname	cmp_xia_sig.c	/^char *progname;$/;"	v
+progname	cmp_xie2_sig.c	/^char *progname;$/;"	v
+progname	cmp_xie_sig.c	/^char *progname;$/;"	v
+progname	cmp_zhu_sig.c	/^char *progname;$/;"	v
+progname	gen_bruyn_sig.c	/^char *progname;$/;"	v
+progname	gen_corvi_sig.c	/^char *progname;$/;"	v
+progname	gen_cox_sig.c	/^char *progname;$/;"	v
+progname	gen_dugad_sig.c	/^char *progname;$/;"	v
+progname	gen_frid2_sig.c	/^char *progname;$/;"	v
+progname	gen_kim_sig.c	/^char *progname;$/;"	v
+progname	gen_koch_sig.c	/^char *progname;$/;"	v
+progname	gen_kund2_sig.c	/^char *progname;$/;"	v
+progname	gen_kund3_sig.c	/^char *progname;$/;"	v
+progname	gen_kund_sig.c	/^char *progname;$/;"	v
+progname	gen_wang_sig.c	/^char *progname;$/;"	v
+progname	gen_xia_sig.c	/^char *progname;$/;"	v
+progname	gen_xie2_sig.c	/^char *progname;$/;"	v
+progname	gen_xie_sig.c	/^char *progname;$/;"	v
+progname	gen_zhu_sig.c	/^char *progname;$/;"	v
+progname	wm_bruyn_d.c	/^char *progname;$/;"	v
+progname	wm_bruyn_e.c	/^char *progname;$/;"	v
+progname	wm_corvi_d.c	/^char *progname;$/;"	v
+progname	wm_corvi_e.c	/^char *progname;$/;"	v
+progname	wm_corvi_s.c	/^char *progname;$/;"	v
+progname	wm_cox_d.c	/^char *progname;$/;"	v
+progname	wm_cox_e.c	/^char *progname;$/;"	v
+progname	wm_dugad_d.c	/^char *progname;$/;"	v
+progname	wm_dugad_e.c	/^char *progname;$/;"	v
+progname	wm_frid2_d.c	/^char *progname;$/;"	v
+progname	wm_frid2_e.c	/^char *progname;$/;"	v
+progname	wm_kim_a.c	/^char *progname;$/;"	v
+progname	wm_kim_d.c	/^char *progname;$/;"	v
+progname	wm_kim_e.c	/^char *progname;$/;"	v
+progname	wm_koch_d.c	/^char *progname;$/;"	v
+progname	wm_koch_e.c	/^char *progname;$/;"	v
+progname	wm_kund2_d.c	/^char *progname;$/;"	v
+progname	wm_kund2_e.c	/^char *progname;$/;"	v
+progname	wm_kund3_d.c	/^char *progname;$/;"	v
+progname	wm_kund3_e.c	/^char *progname;$/;"	v
+progname	wm_kund_e.c	/^char *progname;$/;"	v
+progname	wm_wang_d.c	/^char *progname;$/;"	v
+progname	wm_wang_e.c	/^char *progname;$/;"	v
+progname	wm_xia_d.c	/^char *progname;$/;"	v
+progname	wm_xia_e.c	/^char *progname;$/;"	v
+progname	wm_xie2_d.c	/^char *progname;$/;"	v
+progname	wm_xie2_e.c	/^char *progname;$/;"	v
+progname	wm_xie_d.c	/^char *progname;$/;"	v
+progname	wm_xie_e.c	/^char *progname;$/;"	v
+progname	wm_zhu_d.c	/^char *progname;$/;"	v
+progname	wm_zhu_e.c	/^char *progname;$/;"	v
+quantize_8x8	dct.c	/^void quantize_8x8(double **transform) {$/;"	f
+read_char	wavelet.c	/^static int read_char(FILE *fp)$/;"	f	file:
+read_filter	wavelet.c	/^static Filter read_filter(FILE *f)$/;"	f	file:
+read_filter_gh	wavelet.c	/^static FilterGH read_filter_gh(FILE *f)$/;"	f	file:
+read_int	wavelet.c	/^static int read_int(FILE *fp)$/;"	f	file:
+rec_double	wavelet.c	/^int rec_double(Image_tree dtree,int level,FilterGH *flt,enum FilterMethod method,enum Information_Cost cost,double epsilon)$/;"	f
+recarea	wavelet.c	/^static void recarea(Image_tree tree,Pixel *list,int *list_size)$/;"	f	file:
+rint	wm.h	14;"	d
+rms	wavelet.h	/^	Pixel min,max,mean,var,rms;$/;"	m	struct:Image_info_struct
+save_image_P5	wavelet.c	/^int save_image_P5(char *file, Image img)$/;"	f
+save_structur	wavelet.c	/^static void save_structur(Image_tree tree,FILE *fp,int pos)$/;"	f	file:
+scale_image	wavelet.c	/^void scale_image(Image img, int maximum)$/;"	f
+scramble	dct.c	/^static void scramble(double *f,int len){$/;"	f	file:
+sdiscrepancy	wavelet.h	/^		compression_area,compression_areaq,sdiscrepancy,discrepancy,concentration};$/;"	e	enum:Information_Cost
+select_largest_coeffs	sort.c	/^void select_largest_coeffs(double array[], int n, int m, double largest[]) {$/;"	f
+select_largest_grays	sort.c	/^void select_largest_grays(gray array[], int n, int m, gray largest[]) {$/;"	f
+select_subband	wang_common.c	/^Subband_data select_subband() {$/;"	f
+select_subband_coeff	wang_common.c	/^int select_subband_coeff(Subband_data subband) {$/;"	f
+select_subband_coeff_from	wang_common.c	/^int select_subband_coeff_from(Subband_data subband, int from) {$/;"	f
+selected	wang_common.h	/^  char** selected;$/;"	m	struct:Subband_data_struct
+set_in_binary	wm.c	/^void set_in_binary() {$/;"	f
+set_intpixel	wavelet.h	143;"	d
+set_out_binary	wm.c	/^void set_out_binary() {$/;"	f
+set_pixel	wavelet.h	151;"	d
+set_signature1_bit	signature.c	/^void set_signature1_bit(int n, int v) {$/;"	f
+set_signature2_bit	signature.c	/^void set_signature2_bit(int n, int v) {$/;"	f
+set_signature_bit	signature.c	/^void set_signature_bit(int n, int v) {$/;"	f
+set_subband_beta	wang_common.c	/^void set_subband_beta(Subband_data subband, double beta) {$/;"	f
+set_subband_coeff	wang_common.c	/^void set_subband_coeff(Subband_data subband, int coeff, Pixel data) {$/;"	f
+set_subbands_beta	wang_common.c	/^void set_subbands_beta(double beta) {$/;"	f
+set_subbands_type_beta	wang_common.c	/^void set_subbands_type_beta(int type, double beta) {$/;"	f
+shanon	wavelet.h	/^		shanon,weak_l,weak_lq,compression_number,compression_numberq,$/;"	e	enum:Information_Cost
+sig1_to_binstr	signature.c	/^int sig1_to_binstr(char *binstr) {$/;"	f
+sig2_to_binstr	signature.c	/^int sig2_to_binstr(char *binstr) {$/;"	f
+sig_to_binstr	signature.c	/^int sig_to_binstr(char *binstr) {$/;"	f
+sign	wm_koch_e.c	/^double sign(double x) {$/;"	f
+signature	signature.h	/^char signature[NSIGNATURE];$/;"	v
+signature1	signature.h	/^char signature1[NSIGNATURE];$/;"	v
+signature2	signature.h	/^char signature2[NSIGNATURE];$/;"	v
+significance_map	wavelet.h	/^	IntImage significance_map;$/;"	m	struct:Image_tree_struct
+size	wang_common.h	/^  int size;$/;"	m	struct:Subband_data_struct
+size	wavelet.h	/^	int size;   \/* = width * height *\/$/;"	m	struct:Image_struct
+size	wavelet.h	/^	int size;   \/* = width * height *\/$/;"	m	struct:IntImage_struct
+skip_blank	wavelet.c	1063;"	d	file:
+sort_coeffs	sort.c	/^void sort_coeffs(double a[], int n) {$/;"	f
+sort_grays	sort.c	/^void sort_grays(gray a[], int n) {$/;"	f
+sqr	wm.h	41;"	d
+start	wavelet.h	/^	int start,end;$/;"	m	struct:FilterStruct
+strcasecmp	wm.h	53;"	d
+string_to_pixel	wavelet.c	/^int string_to_pixel(char *str, Pixel *p)$/;"	f
+subband_coeff_isselected	wang_common.c	/^int subband_coeff_isselected(Subband_data subband, int coeff) {$/;"	f
+subband_in_list	dwt_util.c	/^int subband_in_list(char *list, int type, int level) {$/;"	f
+subband_name	dwt_util.c	/^char *subband_name(int type) {$/;"	f
+subband_wp_in_list	dwt_util.c	/^int subband_wp_in_list(char *list, char *name) {$/;"	f
+subbands	wang_common.h	/^Subband_data *subbands;$/;"	v
+sum_list	wavelet.c	/^static Pixel sum_list(Pixel *list,int p,int size)$/;"	f	file:
+sumation_down	wavelet.c	/^static Pixel sumation_down(Image_tree tree, Pixel normq)$/;"	f	file:
+sumationq	wavelet.c	/^static Pixel sumationq(Image img)$/;"	f	file:
+threshold	wavelet.h	/^enum Information_Cost{threshold,log_energy,entropy,norml,norml2,gauss_markov,$/;"	e	enum:Information_Cost
+tree	wang_common.h	/^  Image_tree tree;$/;"	m	struct:Subband_data_struct
+try_modif	wm_koch_e.c	/^double try_modif(gray **image_block, double **dcts, int c1, int c2, double w1, double w2) {$/;"	f
+type	wang_common.h	/^  int type;$/;"	m	struct:Subband_data_struct
+type	wavelet.h	/^	enum FilterGHType type;$/;"	m	struct:FilterGHStruct	typeref:enum:FilterGHStruct::FilterGHType
+type	wavelet.h	/^	enum FilterType type;$/;"	m	struct:FilterStruct	typeref:enum:FilterStruct::FilterType
+unscramble	dct.c	/^static void unscramble(double *f,int len)$/;"	f	file:
+usage	cmp_bruyn_sig.c	/^void usage(void) {$/;"	f
+usage	cmp_corvi_sig.c	/^void usage(void) {$/;"	f
+usage	cmp_cox_sig.c	/^void usage(void) {$/;"	f
+usage	cmp_dct.c	/^void usage(void) {$/;"	f
+usage	cmp_dct8x8.c	/^void usage(void) {$/;"	f
+usage	cmp_dugad_sig.c	/^void usage(void) {$/;"	f
+usage	cmp_dwt.c	/^void usage(void) {$/;"	f
+usage	cmp_frid2_sig.c	/^void usage(void) {$/;"	f
+usage	cmp_kim_sig.c	/^void usage(void) {$/;"	f
+usage	cmp_koch_sig.c	/^void usage(void) {$/;"	f
+usage	cmp_kund2_sig.c	/^void usage(void) {$/;"	f
+usage	cmp_kund3_sig.c	/^void usage(void) {$/;"	f
+usage	cmp_pgm.c	/^void usage(void) {$/;"	f
+usage	cmp_ppm.c	/^void usage(void) {$/;"	f
+usage	cmp_wang_sig.c	/^void usage(void) {$/;"	f
+usage	cmp_xia_sig.c	/^void usage(void) {$/;"	f
+usage	cmp_xie2_sig.c	/^void usage(void) {$/;"	f
+usage	cmp_xie_sig.c	/^void usage(void) {$/;"	f
+usage	cmp_zhu_sig.c	/^void usage(void) {$/;"	f
+usage	gen_bruyn_sig.c	/^void usage(void) {$/;"	f
+usage	gen_corvi_sig.c	/^void usage(void) {$/;"	f
+usage	gen_cox_sig.c	/^void usage(void) {$/;"	f
+usage	gen_dugad_sig.c	/^void usage(void) {$/;"	f
+usage	gen_frid2_sig.c	/^void usage(void) {$/;"	f
+usage	gen_kim_sig.c	/^void usage(void) {$/;"	f
+usage	gen_koch_sig.c	/^void usage(void) {$/;"	f
+usage	gen_kund2_sig.c	/^void usage(void) {$/;"	f
+usage	gen_kund3_sig.c	/^void usage(void) {$/;"	f
+usage	gen_kund_sig.c	/^void usage(void) {$/;"	f
+usage	gen_wang_sig.c	/^void usage(void) {$/;"	f
+usage	gen_xia_sig.c	/^void usage(void) {$/;"	f
+usage	gen_xie2_sig.c	/^void usage(void) {$/;"	f
+usage	gen_xie_sig.c	/^void usage(void) {$/;"	f
+usage	gen_zhu_sig.c	/^void usage(void) {$/;"	f
+usage	wm_bruyn_d.c	/^void usage(void) {$/;"	f
+usage	wm_bruyn_e.c	/^void usage(void) {$/;"	f
+usage	wm_corvi_d.c	/^void usage(void) {$/;"	f
+usage	wm_corvi_e.c	/^void usage(void) {$/;"	f
+usage	wm_corvi_s.c	/^void usage(void) {$/;"	f
+usage	wm_cox_d.c	/^void usage(void) {$/;"	f
+usage	wm_cox_e.c	/^void usage(void) {$/;"	f
+usage	wm_dugad_d.c	/^void usage(void) {$/;"	f
+usage	wm_dugad_e.c	/^void usage(void) {$/;"	f
+usage	wm_frid2_d.c	/^void usage(void) {$/;"	f
+usage	wm_frid2_e.c	/^void usage(void) {$/;"	f
+usage	wm_kim_a.c	/^void usage(void) {$/;"	f
+usage	wm_kim_d.c	/^void usage(void) {$/;"	f
+usage	wm_kim_e.c	/^void usage(void) {$/;"	f
+usage	wm_koch_d.c	/^void usage(void) {$/;"	f
+usage	wm_koch_e.c	/^void usage(void) {$/;"	f
+usage	wm_kund2_d.c	/^void usage(void) {$/;"	f
+usage	wm_kund2_e.c	/^void usage(void) {$/;"	f
+usage	wm_kund3_d.c	/^void usage(void) {$/;"	f
+usage	wm_kund3_e.c	/^void usage(void) {$/;"	f
+usage	wm_kund_e.c	/^void usage(void) {$/;"	f
+usage	wm_wang_d.c	/^void usage(void) {$/;"	f
+usage	wm_wang_e.c	/^void usage(void) {$/;"	f
+usage	wm_xia_d.c	/^void usage(void) {$/;"	f
+usage	wm_xia_e.c	/^void usage(void) {$/;"	f
+usage	wm_xie2_d.c	/^void usage(void) {$/;"	f
+usage	wm_xie2_e.c	/^void usage(void) {$/;"	f
+usage	wm_xie_d.c	/^void usage(void) {$/;"	f
+usage	wm_xie_e.c	/^void usage(void) {$/;"	f
+usage	wm_zhu_d.c	/^void usage(void) {$/;"	f
+usage	wm_zhu_e.c	/^void usage(void) {$/;"	f
+values	coord.h	/^  struct coord *values;$/;"	m	struct:coords	typeref:struct:coords::coord
+var	wavelet.h	/^	Pixel min,max,mean,var,rms;$/;"	m	struct:Image_info_struct
+vertical	wavelet.h	/^	struct Image_tree_struct *coarse,*horizontal,*vertical,*diagonal,*doubletree;$/;"	m	struct:Image_tree_struct	typeref:struct:Image_tree_struct::
+w	wavelet.h	/^	int x,y,w,h;$/;"	m	struct:Zigzag_data_struct
+wavelettransform	wavelet.c	/^Image_tree wavelettransform(Image original,int level,FilterGH *flt,enum FilterMethod method)$/;"	f
+wavelettransform__wp	wavelet.c	/^static Image_tree wavelettransform__wp(Image original, int current_level, int level, FilterGH *flt, enum FilterMethod method)$/;"	f	file:
+wavelettransform_wp	wavelet.c	/^Image_tree wavelettransform_wp(Image original, int level, FilterGH *flt, enum FilterMethod method) {$/;"	f
+weak_l	wavelet.h	/^		shanon,weak_l,weak_lq,compression_number,compression_numberq,$/;"	e	enum:Information_Cost
+weak_lp	wavelet.c	/^static Pixel weak_lp(Image_tree tree,int size,int p,double epsilon)$/;"	f	file:
+weak_lq	wavelet.h	/^		shanon,weak_l,weak_lq,compression_number,compression_numberq,$/;"	e	enum:Information_Cost
+width	wang_common.h	/^  int width;$/;"	m	struct:Subband_data_struct
+width	wavelet.h	/^		int width,height; \/* segment width & height*\/$/;"	m	struct:SegmentsStruct
+width	wavelet.h	/^	int width, height;$/;"	m	struct:IntImage_struct
+width	wavelet.h	/^	int width,height;$/;"	m	struct:Image_struct
+wm_init	wm.c	/^void wm_init() {$/;"	f
+wm_init1	wm.c	/^void wm_init1() {$/;"	f
+wm_init2	wm.c	/^void wm_init2() {$/;"	f
+wm_subband	wm_dugad_d.c	/^void wm_subband(Image s, double *w, int n, double t2, int *m, double *z, double *v) {$/;"	f
+wm_subband	wm_dugad_e.c	/^void wm_subband(Image s, double *w, int n, double a, double t1) {$/;"	f
+wm_transform	wm_xie2_d.c	/^double wm_transform(int quant, double f1, double f2, double f3) {$/;"	f
+wm_transform	wm_xie2_e.c	/^double wm_transform(int quant, double f1, double f2, double f3, int x) {$/;"	f
+wm_transform	wm_xie_d.c	/^double wm_transform(double alpha, double f1, double f2, double f3) {$/;"	f
+wm_transform	wm_xie_e.c	/^double wm_transform(double alpha, double f1, double f2, double f3, int x) {$/;"	f
+write_flags	wavelet.c	/^static void write_flags(Image_tree tree,int *list,int len,int pos)$/;"	f	file:
+write_mark	wm_kim_d.c	/^void write_mark(FILE *out, double watermark[], int n) {$/;"	f
+write_mark	wm_xia_d.c	/^void write_mark(FILE *out, double watermark[], int n) {$/;"	f
+write_mark	wm_zhu_d.c	/^void write_mark(FILE *out, double watermark[], int n) {$/;"	f
+x	coord.h	/^  int x;$/;"	m	struct:coord
+x	wavelet.h	/^	int x,y,w,h;$/;"	m	struct:Zigzag_data_struct
+y	coord.h	/^  int y;$/;"	m	struct:coord
+y	wavelet.h	/^	int x,y,w,h;$/;"	m	struct:Zigzag_data_struct
+zigzag_direction	wavelet.h	/^enum zigzag_direction {zigzag_up,zigzag_down,zigzag_right,zigzag_left};$/;"	g
+zigzag_down	wavelet.h	/^enum zigzag_direction {zigzag_up,zigzag_down,zigzag_right,zigzag_left};$/;"	e	enum:zigzag_direction
+zigzag_left	wavelet.h	/^enum zigzag_direction {zigzag_up,zigzag_down,zigzag_right,zigzag_left};$/;"	e	enum:zigzag_direction
+zigzag_right	wavelet.h	/^enum zigzag_direction {zigzag_up,zigzag_down,zigzag_right,zigzag_left};$/;"	e	enum:zigzag_direction
+zigzag_up	wavelet.h	/^enum zigzag_direction {zigzag_up,zigzag_down,zigzag_right,zigzag_left};$/;"	e	enum:zigzag_direction

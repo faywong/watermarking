@@ -1,0 +1,1229 @@
+#LyX 1.5.0rc2 created this file. For more info see http://www.lyx.org/
+\lyxformat 276
+\begin_document
+\begin_header
+\textclass paper
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\paperfontsize default
+\spacing single
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 0
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip smallskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "Anonymous" 
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Watermarking Source Code
+\end_layout
+
+\begin_layout SubTitle
+version 0.5
+\end_layout
+
+\begin_layout Author
+Peter Meerwald
+\end_layout
+
+\begin_layout Address
+Dept.
+ of Computer Sciences, University of Salzburg
+\newline
+Jakob-Haringer-Str.
+ 2, A-5020 Salzburg, Austria
+\newline
+
+\begin_inset LatexCommand url
+target "mailto:pmeerw@cosy.sbg.ac.at"
+
+\end_inset
+
+
+\newline
+
+\begin_inset LatexCommand url
+target "http://www.cosy.sbg.ac.at/~pmeerw/Watermarking"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Abstract
+This package provides source code for some watermarking algorithms in hopefully
+ portable C code.
+ The programs can be used to study watermarking techniques, perform comparative
+ robustness tests and develop new attacks against embedded watermarks.
+\end_layout
+
+\begin_layout Abstract
+However, the provided programs are by no means suitable for real-world applicati
+on (i.e.
+ copyright protection) and the code solely serves some educational purpose.
+\end_layout
+
+\begin_layout Standard
+\begin_inset LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+Academic research in the watermarking field has grown dramatically since
+ approximately 1995.
+ But surprisingly, source code for the proposed watermarking schemes has
+ not been made available.
+ The reason is most likely the security of many watermarking systems lies
+ at least to some extent in the embedding and detection algorithm itself,
+ and not in the keys used -- violating the Kerckhoff principle 
+\begin_inset LatexCommand cite
+key "Kerckhoff1883a"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+With the availability of public robustness test for watermarking algorithms,
+ StirMark 
+\begin_inset LatexCommand cite
+key "Petitcolas99c, Petitcolas98b, Petitcolas98a"
+
+\end_inset
+
+, Unzign
+\begin_inset Foot
+status collapsed
+
+\begin_layout Standard
+\begin_inset LatexCommand url
+target "http://www.altern.org/watermark"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ and very recently Checkmark
+\begin_inset LatexCommand cite
+key "Pereira01b"
+
+\end_inset
+
+, the situation begins to improve.
+ Now it is possible to measure the performance of watermarking systems.
+ 
+\end_layout
+
+\begin_layout Standard
+In order the compare and evaluate new embedding and detection techniques,
+ it is also necessary to have some reference implementations of the older,
+ now often called classical schemes.
+ In this work, we provide some implementations of watermarking schemes,
+ some of which can be considered 'classical'.
+\end_layout
+
+\begin_layout Standard
+It was the goal to capture the main ideas of the proposed algorithms, as
+ layed out in the respective papers.
+ This is clearly not an easy task as some papers do not disclose all details
+ or state which particular parameters were used to obtain the results outlined
+ in the communications.
+\end_layout
+
+\begin_layout Standard
+I am very interested in hearing your comments, complaints and suggestions
+ regarding this software.
+ Moreover, if you have source code for a watermarking scheme not yet covered
+ or some useful utility I would be happy to include your code in this distributi
+on.
+ Please see the contact information at the top of this document.
+\end_layout
+
+\begin_layout Standard
+If you use the accompanying code, please cite my thesis:
+\end_layout
+
+\begin_layout Quotation
+Peter Meerwald, Digital Image Watermarking in the Wavelet Transform Domain,
+ Master's Thesis, Department of Scientific Computing, University of Salzburg,
+ Austria, January 2001.
+\end_layout
+
+\begin_layout Section
+Software
+\end_layout
+
+\begin_layout Standard
+Most of the software provided herein was written by myself, as part of my
+ Master thesis.
+ Some contributions were made by Vassilis Fotopoulos
+\begin_inset Foot
+status collapsed
+
+\begin_layout Standard
+\begin_inset LatexCommand url
+target "mailto:vfotop1@physics.upatras.gr"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+ The software in the archive is organized in the following sub-directories:
+\end_layout
+
+\begin_layout Description
+Fotopoulos/ contains contributions by Vassilis Fotopoulos
+\end_layout
+
+\begin_layout Description
+Meerwald/ contains my work
+\end_layout
+
+\begin_layout Description
+images/ contains the Lena image in PGM format; the default parameters of
+ most algorithms are tuned to work best with that image
+\end_layout
+
+\begin_layout Description
+linux_bin/ the place where the Linux executables are stored in the binary
+ distribution
+\end_layout
+
+\begin_layout Description
+win32_bin/ the place where Windows 32-bit executables are distributed; tested
+ with Windows NT 4.0 only
+\end_layout
+
+\begin_layout Description
+make/ contains the 
+\family typewriter
+\size small
+Makefile
+\family default
+\size default
+ options to build the code on supported platforms
+\end_layout
+
+\begin_layout Standard
+For the purpose of this software package, a watermarking system comprises
+ four parts, namely: signature generation, watermark embedding, watermark
+ extraction and signature comparison or detection -- with the exception
+ of Vassilis's code; there are only cast and test programs (corresponds
+ to watermark embedding and detection).
+ Signature is used more less as a synonym for mark and can be thought of
+ as the payload (at least for some schemes :-).
+\end_layout
+
+\begin_layout Standard
+All programs only accept the image in NetPBM format and will also produce
+ only NetPBM-format files (see section 
+\begin_inset LatexCommand ref
+reference "sec:prereq"
+
+\end_inset
+
+).
+ Unfortunately, most programs have only been tested with 8-bit gray-scale
+ images of size 
+\begin_inset Formula $512\times512.$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+In order to simplify batch testing, the programs allow to read either from
+ a file, e.g.
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+wm_cox_e -s cox.sig
+\family default
+ 
+\family typewriter
+\series bold
+image.pgm
+\end_layout
+
+\begin_layout Standard
+or from standard input, i.e.
+\end_layout
+
+\begin_layout Standard
+wm_cox_e -s cox.sig 
+\series bold
+< image.pgm
+\end_layout
+
+\begin_layout Standard
+The output is usually written to standard output, i.e.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+wm_cox_e -s cox.sig image.pgm
+\family default
+ 
+\family typewriter
+\series bold
+> wm_image.pgm
+\end_layout
+
+\begin_layout Standard
+unless redirected to a file, e.g.
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+wm_cox_e -s cox.sig
+\family default
+ 
+\family typewriter
+\series bold
+-o wm_image.pgm
+\family default
+\series default
+ 
+\family typewriter
+image.pgm
+\end_layout
+
+\begin_layout Subsection
+Featured algorithms
+\end_layout
+
+\begin_layout Standard
+Currently it includes the following watermarking algorithms
+\end_layout
+
+\begin_layout Itemize
+Bruyndonckx [bruyn], refer to
+\end_layout
+
+\begin_layout Quotation
+O.
+ Bruyndonckx, Jean-Jacques Quisquater, and Benoit M.
+ Macq.
+ Spatial method for copyright labeling of digital images.
+ In IEEE Workshop on Nonlinear Signal and Image Processing '95, Thessaloniki,
+ Greece, pages 456 - 459, 1995.
+\end_layout
+
+\begin_layout Itemize
+Corvi, refer to
+\end_layout
+
+\begin_layout Quotation
+Marco Corvi and Gianluca Nicchiotti.
+ Wavelet-based image watermarking for copyright protection.
+ In Scandinavian Conference on Image Analysis SCIA '97, Lappeenranta, Finland,
+ June 1997.
+\end_layout
+
+\begin_layout Itemize
+Cox, refer to
+\end_layout
+
+\begin_layout Quotation
+Ingemar J.
+ Cox, Joe Kilian, Tom Leighton, and Talal G.
+ Shamoon.
+ Secure spread spectrum watermarking for multimedia.
+ In Proceedings of the IEEE ICIP '97, volume 6, pages 1673 - 1687, Santa
+ Barbara, California, USA, 1997.
+\end_layout
+
+\begin_layout Itemize
+Dugad, refer to
+\end_layout
+
+\begin_layout Quotation
+Rakesh Dugad, Krishna Ratakonda, and Narendra Ahuja.
+ A new wavelet-based scheme for watermarking images.
+ In Proceedings of the IEEE International Conference on Image Processing,
+ ICIP '98, Chicago, IL, USA, October 1998.
+ 
+\end_layout
+
+\begin_layout Itemize
+Fridrich (2.
+ scheme), refer to
+\end_layout
+
+\begin_layout Quotation
+Jiri Fridrich.
+ Combining low-frequency and spread spectrum watermarking.
+ In Proceedings of the SPIE Symposium on Optical Science, Engineering and
+ Instrumentation, San Diego, USA, July 1998.
+ 
+\end_layout
+
+\begin_layout Itemize
+Kim, refer to 
+\end_layout
+
+\begin_layout Quotation
+Jong Ryul Kim and Young Shik Moon.
+ A robust wavelet-based digital watermark using level-adaptive thresholding.
+ In Proceedings of the 6th IEEE International Conference on Image Processing
+ ICIP '99, page 202, Kobe, Japan, October 1999.
+\end_layout
+
+\begin_layout Itemize
+Koch, refer to
+\end_layout
+
+\begin_layout Quotation
+Eckhard Koch and Jian Zhao.
+ Towards robust and hidden image copyright labeling.
+ In Proceedings of the IEEE International Workshop on Nonlinear Signal and
+ Image Processing, pages 452 - 455, Halkidiki, Marmaras, Greece, June 1995.
+\end_layout
+
+\begin_layout Itemize
+Kundur, refer to 
+\end_layout
+
+\begin_layout Quotation
+Deepa Kundur and Dimitrios Hatzinakos.
+ Digital watermarking using multiresolution wavelet decomposition.
+ In Proceedings of IEEE ICASSP '98, volume 5, pages 2969-2972, Seattle,
+ WA, USA, May 1998.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+and 
+\end_layout
+
+\end_deeper
+\begin_layout Quotation
+Deepa Kundur and D.
+ Hatzinakos.
+ Diversity and attack characterization for improved robust watermarking.
+ IEEE Transactions on Signal Processing, 29(10):2383-2396, October 2001.
+\end_layout
+
+\begin_layout Itemize
+Wang, refer to
+\end_layout
+
+\begin_layout Quotation
+Houng-Jyh Wang, Po-Chyi Su, and C.-C.
+ Jay Kuo.
+ Wavelet-based digital image watermarking.
+ Optics Express, volume 3, pp.
+ 497, December 1998.
+ 
+\end_layout
+
+\begin_layout Itemize
+Xia, refer to
+\end_layout
+
+\begin_layout Quotation
+Xiang-Gen Xia, Charles G.
+ Boncelet, and Gonzalo R.
+ Arce.
+ Wavelet transform based watermark for digital images.
+ Optics Express, volume 3, pp.
+ 497, December 1998.
+\end_layout
+
+\begin_layout Itemize
+Xie, refer to
+\end_layout
+
+\begin_layout Quotation
+Liehua Xie and Gonzalo R.
+ Arce.
+ Joint wavelet compression and authentication watermarking.
+ In Proceedings of the IEEE International Conference on Image Processing,
+ ICIP '98, Chicago, IL, USA, 1998.
+\end_layout
+
+\begin_layout Itemize
+Zhu, refer to
+\end_layout
+
+\begin_layout Quotation
+Wenwu Zhu, Zixiang Xiong, and Ya-Qin Zhang.
+ Multiresolution watermarking for images and video: a unified approach.
+ In Proceedings of the IEEE International Conference on Image Processing,
+ ICIP '98, Chicago, IL, USA, October 1998.
+ 
+\end_layout
+
+\begin_layout Itemize
+Piva/Fotopoulos [cast|test-pv,hart,sub], contribution by Vassilis Fotopoulos,
+ refer to
+\end_layout
+
+\begin_layout Quotation
+M.Barni, F.
+ Bartolini, V.
+ Cappellini, A.
+ Piva.
+ A DCT-Domain System for Robust Image Watermarking, Signal Processing, vol.
+ 66, pp 357 - 372, 1998.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset VSpace smallskip
+\end_inset
+
+and
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Quotation
+V.
+ Fotopoulos, A.
+ N.
+ Skodras, A Subband DCT approach to image watermarking, X European Signal
+ Processing Conference, September 4 - 8, 2000, Tampere, Finland.
+\end_layout
+
+\begin_layout Standard
+More algorithms will be added over time, I have implemented about 13 watermarkin
+g algorithms in the spatial-, DCT-, and wavelet domain so far.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset LatexCommand label
+name "sec:utility_programs"
+
+\end_inset
+
+Utility programs
+\end_layout
+
+\begin_layout Standard
+A good way to check the effect of a watermarking algorithm is computing
+ the difference image, i.e.
+ subtracting the original image from the watermarked image.
+ Alternatively, one can also have a look at the modified coefficients in
+ the transform domain.
+ The following programs facilitate these tasks:
+\end_layout
+
+\begin_layout Description
+cmp_pgm compute difference image, PSNR, ...
+\end_layout
+
+\begin_layout Description
+cmp_dct compute full-frame DCT domain difference image
+\end_layout
+
+\begin_layout Description
+cmp_dct8x8 compute 8x8 block-based DCT difference image
+\end_layout
+
+\begin_layout Description
+cmp_dwt compute DWT domain difference image
+\end_layout
+
+\begin_layout Standard
+For example, to produce the difference image of two PGM files and compute
+ the PSNR along with some other measures, the following command can be used:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+cmp_pgm -p -i original.pgm -o diff.pgm watermarked.pgm
+\end_layout
+
+\begin_layout Section
+Usage
+\end_layout
+
+\begin_layout Standard
+Note, almost all programs will output usage information if called with the
+ 
+\family typewriter
+\size small
+-h
+\family default
+\size default
+ argument.
+\end_layout
+
+\begin_layout Subsection
+Generating a mark
+\end_layout
+
+\begin_layout Standard
+First, you have to generate an appropriate signature file for the corresponding
+ embedding/detection algorithm; e.g.
+ if you are going to use Cox' scheme, then you would run
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+gen_cox_sig
+\end_layout
+
+\begin_layout Standard
+The programs outputs some parameters and a sequence of Gaussian distributed
+ random numbers (which is the watermark sequence).
+ You want to save that into a signature file, so you run
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+gen_cox_sig > cox.sig or 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+gen_cox_sig -o cox.sig
+\end_layout
+
+\begin_layout Standard
+You can influence e.g.
+ the embedding strength that will be used in the embedding step by running
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+gen_cox_sig -a 0.5 > too_strong_cox.sig
+\end_layout
+
+\begin_layout Standard
+Usually, the programs for generating a signature will supply reasonable
+ default values for marking a 8-bit gray-scale image of size 
+\begin_inset Formula $512\times512.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Watermark embedding
+\end_layout
+
+\begin_layout Standard
+Watermark embedding is performed with the following command (for our example,
+ we are using Cox' scheme):
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+wm_cox_e -s cox.sig -o cox_lena.pgm lena.pgm
+\end_layout
+
+\begin_layout Standard
+The signature file is parsed to obtain the particular watermark sequence
+ and the embedding strength.
+ The watermarked image is written to the file 
+\family typewriter
+\size small
+cox_lena.pgm
+\family default
+\size default
+.
+ Now it the time to check the perceptual quality of the produced image and
+ also have a look at the difference image (see section 
+\begin_inset LatexCommand ref
+reference "sec:utility_programs"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Subsection
+Watermark extraction
+\end_layout
+
+\begin_layout Standard
+To extract the embedded signature, we execute the command 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+wm_cox_d -s cox.sig -i lena.pgm -o cox.wm cox_lena.pgm 
+\end_layout
+
+\begin_layout Standard
+Since Cox' algorithm is not blind, the original image is needed as a reference
+ to extract the embedded mark.
+ The embedded mark will be stored in 
+\family typewriter
+\size small
+cox.wm
+\family default
+\size default
+.
+ The original signature, 
+\family typewriter
+\size small
+cox.sig
+\family default
+\size default
+, is used to get the auxiliary embedding parameter correct (e.g.
+ embedding strength).
+ 
+\end_layout
+
+\begin_layout Subsection
+Comparing the mark
+\end_layout
+
+\begin_layout Standard
+The final step is comparing the original signature against the extracted
+ signature.
+ The result here is usually a correlation factor.
+ Values around 0 indicate that the mark has not been found, values around
+ 1.
+\end_layout
+
+\begin_layout Standard
+In most programs a analytical detection threshold for some detection probability
+ is not used.
+ Hence, one has to observe the output of the detector for many different
+ keys (around 1000 I'd suggest) to establish a reasonable threshold for
+ detection.
+ A good value to go with initially might be 0.2 which means we claim the
+ watermark detected if the correlation factor is > 0.2.
+\end_layout
+
+\begin_layout Standard
+The appropriate command for comparing the mark is
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+cmp_cox_sig -s cox.sig cox.wm 
+\end_layout
+
+\begin_layout Subsection
+Batch testing - benchmarking
+\end_layout
+
+\begin_layout Standard
+If you want to run many test you can pipe the images to be do be watermarked
+ (and tested) through the embedder and detector.
+ The programs then act like a filter.
+ Try something like the following in a Unix shell script:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+gen_cox_sig > cox.sig 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+for i in *.pgm 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+do 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+\InsetSpace ~
+\InsetSpace ~
+wm_cox_e -s cox.sig $i | 
+\backslash
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+\InsetSpace ~
+\InsetSpace ~
+wm_cox_d -s cox.sig -i $i | 
+\backslash
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+\InsetSpace ~
+\InsetSpace ~
+cmp_cox_sig -s cox.sig 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+done
+\end_layout
+
+\begin_layout Section
+\begin_inset LatexCommand label
+name "sec:recompile"
+
+\end_inset
+
+Recompiling
+\end_layout
+
+\begin_layout Standard
+Note, that most watermark embedding/extraction programs use the built-in
+ random number generator of the C library, i.e.
+ 
+\family typewriter
+\size small
+srandom()
+\family default
+\size default
+ and 
+\family typewriter
+\size small
+random().
+
+\family default
+ 
+\size default
+Therefore, if you recompile, chances are that you won't be able to use your
+ images watermarked with the previous version.
+\end_layout
+
+\begin_layout Standard
+The Makefile options for compiling on the different platforms can be found
+ in the 
+\family typewriter
+\size small
+make/
+\family default
+\size default
+ sub-directory of the archive.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset LatexCommand label
+name "sec:prereq"
+
+\end_inset
+
+Prerequisites
+\end_layout
+
+\begin_layout Subsubsection
+NetPBM
+\end_layout
+
+\begin_layout Standard
+NetPBM is responsible for image file I/O and provides a definition of a
+ simple image file format along with many image file format filters that
+ allow to convert images to and from NetPBM format.
+ 
+\end_layout
+
+\begin_layout Standard
+You need to get and install the NetPBM library at 
+\begin_inset LatexCommand url
+target "http://wuarchive.wustl.edu/graphics/graphics/packages/NetPBM/"
+
+\end_inset
+
+ or 
+\begin_inset LatexCommand url
+target "http://netpbm.sourceforge.net"
+
+\end_inset
+
+.
+ The library provides 
+\family typewriter
+\size small
+pgm.h
+\family default
+\size default
+ and the appropriate implementation.
+\end_layout
+
+\begin_layout Subsubsection
+getopt
+\end_layout
+
+\begin_layout Standard
+When compiling on Windows, the getopt() function call required.
+ An implementation of getopt() can be found in the NetPBM package.
+ 
+\end_layout
+
+\begin_layout Subsection
+Unix/Linux platform
+\end_layout
+
+\begin_layout Standard
+All programs were developed using Linux and GNU C.
+ The programs should compile and work with all recent versions of Linux
+ and GNU C.
+ 
+\end_layout
+
+\begin_layout Subsection
+\begin_inset LatexCommand label
+name "sec:win32_compile"
+
+\end_inset
+
+Win32 platform
+\end_layout
+
+\begin_layout Standard
+The programs were ported to the Windows platform using the Cygwin
+\begin_inset Foot
+status collapsed
+
+\begin_layout Standard
+\begin_inset LatexCommand url
+target "http://www.cygwin.com"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+and Mingw
+\begin_inset Foot
+status collapsed
+
+\begin_layout Standard
+\begin_inset LatexCommand url
+target "http://www.mingw.org"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ environment.
+ Most notable, the file mode for standard input and standard output has
+ to be set to binary mode.
+ This is accomplished with the 
+\family typewriter
+\size small
+setmode()
+\family default
+\size default
+ or 
+\family typewriter
+\size small
+_fsetmode()
+\family default
+\size default
+ commands.
+\end_layout
+
+\begin_layout Section
+FAQ
+\end_layout
+
+\begin_layout Standard
+Q: How can I report problems?
+\end_layout
+
+\begin_layout Standard
+A: See the contact information at the beginning of this document.
+\end_layout
+
+\begin_layout Standard
+Q: The compiler complains about 
+\family typewriter
+\size small
+pgm.h
+\family default
+\size default
+?
+\end_layout
+
+\begin_layout Standard
+A: You need to get and install the NetPBM library, see section 
+\begin_inset LatexCommand ref
+reference "sec:prereq"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Q: What is the best algorithm? 
+\end_layout
+
+\begin_layout Standard
+A: Depends on your application.
+\end_layout
+
+\begin_layout Standard
+Q: What is the most robust algorithm?
+\end_layout
+
+\begin_layout Standard
+A: Depends on the attack.
+ See some results on 
+\begin_inset LatexCommand url
+target "http://www.cosy.sbg.ac.at/~pmeerw/Watermarking"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Q: I need code for a full-frame DCT?
+\end_layout
+
+\begin_layout Standard
+A: See the files Meerwald/dct.* in the archive.
+\end_layout
+
+\begin_layout Standard
+Q: I need code for a 8x8 block DCT?
+\end_layout
+
+\begin_layout Standard
+A: See the files 
+\family typewriter
+\size small
+Meerwald/dct.*
+\family default
+\size default
+ in the archive.
+\end_layout
+
+\begin_layout Standard
+Q: I need code for the wavelet transform (DWT)?
+\end_layout
+
+\begin_layout Standard
+A: See the files 
+\family typewriter
+\size small
+Meerwald/wavelet.*
+\family default
+\size default
+ in the archive.
+\end_layout
+
+\begin_layout Standard
+Q: I get the message 'unable to open filter.dat' - what to do?
+\end_layout
+
+\begin_layout Standard
+A: Make sure the file filter.dat is in the current directory or accessible
+ via path/filename specified in the signature file.
+ Use the signature generation command to specify an absolute path if necessary.
+\end_layout
+
+\begin_layout Standard
+Q: I can't compile the code using some Microsoft product?
+\end_layout
+
+\begin_layout Standard
+A: Make your life easier, install GNU software! See section 
+\begin_inset LatexCommand ref
+reference "sec:recompile"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Revision history
+\end_layout
+
+\begin_layout Standard
+version 0.5 (December, 2005)
+\end_layout
+
+\begin_layout Itemize
+added algorithm kund3, kund2 and xie2
+\end_layout
+
+\begin_layout Standard
+version 0.4 (June 21, 2001)
+\end_layout
+
+\begin_layout Itemize
+bug fixes 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+wm_xia_{e|d}.c variable level uninitialized 
+\end_layout
+
+\begin_layout Itemize
+wm_zhu_{e|d}.c variable level uninitialized
+\end_layout
+
+\begin_layout Itemize
+issue with random() vs.
+ rand() and RAND_MAX in frid2_common.c
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+added option to bruyn algorithm to disable block skipping
+\end_layout
+
+\begin_layout Itemize
+added algorithm kim
+\end_layout
+
+\begin_layout Standard
+version 0.3 (June 18, 2001)
+\end_layout
+
+\begin_layout Itemize
+created a nice (?) manual/documentation
+\end_layout
+
+\begin_layout Itemize
+added algorithms by Dugad, Wang, Zhu, Fridrich
+\end_layout
+
+\begin_layout Itemize
+added Makefiles for Win32 platform (mingw32)
+\end_layout
+
+\begin_layout Standard
+version 0.2 (February 22, 2001)
+\end_layout
+
+\begin_layout Itemize
+added contribution by Vassilis Fotopoulos (Piva's algorithm,
+\end_layout
+
+\begin_layout Itemize
+DCT, Hartley and subband domain) - see Fotopoulos/ subdirectory
+\end_layout
+
+\begin_layout Itemize
+stuff moved to Meerwald/ subdirectory
+\end_layout
+
+\begin_layout Itemize
+added Bruyndonckx, Corvi, Koch, Xia, Xie algorithms
+\end_layout
+
+\begin_layout Standard
+version 0.1 (February 18, 2001)
+\end_layout
+
+\begin_layout Itemize
+initial release
+\end_layout
+
+\begin_layout Section
+Legal statement
+\end_layout
+
+\begin_layout Standard
+My license is called "I-don't-care" license: (1) You can do with the accompanyin
+g software whatever you want, but don't blame me if it doesn't work or it
+ causes damage.
+ (2) If you think my work is useful, tell me and tell others, but you are
+ not obliged to do so.
+ I suggest not to remove information contained in this other documentation
+ file.
+\end_layout
+
+\begin_layout Standard
+\begin_inset LatexCommand bibtex
+options "plain"
+bibfiles "watermarking"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

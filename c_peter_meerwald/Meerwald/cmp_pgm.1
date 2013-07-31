@@ -1,0 +1,69 @@
+.\"
+.\" cmp_pgm.1 - the *roff document processor man page source
+.\"
+.TH cmp_pgm 1 "98/07/08" "Watermarking, Version 1.0"
+.SH NAME
+cmp_pgm \- a program to create the difference image of two PGM images
+.SH SYNOPSIS
+.B cmp_pgm
+[
+.B \-h
+]
+[
+.BI \-m \ number
+]
+[
+.BI \-o \ ofile
+]
+.BI \-i \ ifile
+.I file
+.SH DESCRIPTION
+.B cmp_pgm
+is a program to create the difference image of two PGM (portable graymap)
+grayscale images. To compare PPM (portable pixmap) RGB color images, use the
+.B cmp_ppm
+program.
+.PP
+If
+.I file
+or
+.I ofile
+is not specified, then standard input or standard output is
+used.
+.PP
+.SH OPTIONS
+.TP
+.B \-h
+Print a help message.
+.TP
+.BI \-i \ ifile
+The original image. Mandatory.
+.TP
+.BI \-m \ number
+Multiplication factor to magnify differences between the to
+original and input image.
+Default value: 16.
+.TP
+.BI \-o \ ofile
+Output image file to contain the difference image in PGM format.
+.TP
+.I file
+Input image that is compared against
+.I ifile.
+Default: standard input.
+.SH OUTPUT
+The difference image in PGM format is written to standard output or,
+optionally, to
+.I ofile.
+.SH AUTHOR
+Peter Meerwald.
+Email bug reports to pmeerw@cosy.sbg.ac.at.
+.SH AVAILABILITY
+The most recent released version of
+.B cmp_pgm
+is always available
+at http://www.cosy.sbg.ac.at/~pmeerw/Watermarking or via anonymous ftp from ftp.cosy.sbg.ac.at in the
+directory /pub/people/pmeerw/Watermarking.
+.SH "SEE ALSO"
+.B cmp_ppm
+(1)

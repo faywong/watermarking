@@ -1,0 +1,161 @@
+.\"
+.\" gen_corvi_sig.1 - the *roff document processor man page source
+.\"
+.TH gen_corvi_sig 1 "98/07/17" "Watermarking, Version 1.0"
+.SH NAME
+.B gen_corvi_sig
+\- a program to generate a signature for
+the
+.B wm_corvi_e
+watermarking program
+.SH SYNOPSIS
+.B gen_corvi_sig
+[
+.BI \-a \ number
+]
+[
+.BI \-d \ number
+]
+[
+.BI \-e \ number
+]
+[
+.BI \-f \ number
+]
+[
+.BI \-F \ ffile
+]
+[
+.BI \-g \ number
+]
+.br
+[
+.B \-h
+]
+[
+.BI \-m \ number
+]
+[
+.BI \-n \ number
+]
+[
+.BI \-o \ file
+]
+[
+.BI \-q \ number
+]
+[
+.BI \-s \ number
+]
+.SH DESCRIPTION
+.B gen_corvi_sig
+is a program to generate a signature to be
+embedded with the
+.B wm_corvi_e
+watermarking program and extracted with the
+.B wm_corvi_d
+program. The
+.B cmp_corvi_sig
+program is used to compare and test an
+extracted signature with the original signature.
+.PP
+Please refer to Marco Corvi's paper "Wavlet-based image watermarking
+for copyright protection", to get an idea of the algorithm.
+.PP
+.SH OPTIONS
+.TP
+.BI \-a \ number
+Alpha factor that determines embedding strength of the signature. Default
+value 0.3.
+.TP
+.BI \-d \ number
+Deviation for the normal distributed signature values, default 1.0.
+.TP
+.BI \-e \ number
+The filtering method for the forward wavelet transform. Default value
+1.
+.TP
+.BI \-F \ ffile
+The filter definition file. Default
+.I filter.dat.
+.TP
+.BI \-f \ number
+Use the
+.I number
+filter from the filter definition file,
+.I ffile. Default: 1.
+.TP
+.BI \-g \ number
+The filtering method for the inverse wavelet transform. Default value
+2.
+.TP
+.B \-h
+Print a help message.
+.TP
+.BI \-m \ number
+Mean of the normal distributed signature values, default 0.0.
+.TP
+.BI \-n \ number
+Length of the watermark. Default value 100.
+.TP
+.BI \-o \ file
+Output signature to the specified
+.I file
+instead of standard output.
+.TP
+.BI \-q \ number
+Quantization/quality factor. Default value 3.
+.TP
+.BI \-s \ number
+Specify a seed value to initialize the pseudo-random number
+generator; if not specified, time and pid (process id) are used
+to initialize the pseudo-random number generator.
+.PP
+.SH OUTPUT
+The output file has the following format:
+.TP
+.B CVSG
+Magic to identify file type.
+.TP
+.I number
+The length of the signature in bits.
+.TP
+.I number
+The alpha factor (embedding strength).
+.TP
+.I number
+The quantization/quality factor.
+.TP
+.I number
+The wavelet forward transform filtering method.
+.TP
+.I number
+The wavelet filter number.
+.TP
+.I file
+The wavelet filter definition file name.
+.TP 
+.I number
+The wavelet inverse transform filtering method.
+.TP
+.I numbers
+The actual normal distributed signature values, one per line.
+.PP
+.SH AUTHOR
+Peter Meerwald.
+Email bug reports to pmeerw@cosy.sbg.ac.at.
+.SH AVAILABILITY
+The most recent released version of
+.B gen_corvi_sig
+is always available
+at http://www.cosy.sbg.ac.at/~pmeerw/Watermarking or via anonymous ftp from ftp.cosy.sbg.ac.at in the
+directory /pub/people/pmeerw/Watermarking.
+.SH "SEE ALSO"
+.BR wm_corvi_e
+(1),
+.BR wm_corvi_d
+(1),
+.BR wm_corvi_s
+(1),
+.BR cmp_corvi_sig
+(1)

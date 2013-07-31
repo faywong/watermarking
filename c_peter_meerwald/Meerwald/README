@@ -1,0 +1,157 @@
+This package provides source code for some watermarking algorithms in portable
+C code. Currently it includes the following
+
+  watermarking algorithms
+
+    Bruyndonckx
+      refer to
+        O. Bruyndonckx, Jean-Jacques Quisquater, and Benoit M. Macq. 
+        Spatial method for copyright labeling of digital images. 
+        In IEEE Workshop on Nonlinear Signal and Image Processing '95, 
+        Thessaloniki, Greece, pages 456 - 459, 1995. 
+
+    Corvi
+      refer to
+        Marco Corvi and Gianluca Nicchiotti. 
+        Wavelet-based image watermarking for copyright protection. 
+        In Scandinavian Conference on Image Analysis SCIA '97, Lappeenranta, 
+        Finland, June 1997. 
+
+    Cox 
+      refer to
+	Ingemar J. Cox, Joe Kilian, Tom Leighton, and Talal G. Shamoon. 
+	Secure spread spectrum watermarking for multimedia. 
+	In Proceedings of the IEEE ICIP '97, 
+	volume 6, pages 1673 - 1687, Santa Barbara, California, USA, 1997. 
+
+    Dugad
+      refer to
+        Rakesh Dugad, Krishna Ratakonda, and Narendra Ahuja.
+        A new wavelet-based scheme for watermarking images. In Proceedings of
+        the IEEE International Conference on Image Processing, ICIP '98,
+        Chicago, IL, USA, October 1998.
+
+    Fridrich (2. scheme)
+      refer to
+        Jiri Fridrich.
+        Combining low-frequency and spread spectrum watermarking. In
+        Proceedings of the SPIE Symposium on Optical Science, Engineering and
+        Instrumentation, San Diego, USA, July 1998.
+
+    Koch
+      refer to
+        Eckhard Koch and Jian Zhao. 
+        Towards robust and hidden image copyright labeling. 
+        In Proceedings of the IEEE International Workshop on Nonlinear 
+        Signal and Image Processing, pages 452 - 455, Halkidiki, Marmaras, 
+        Greece, June 1995. 
+
+    Kim
+      refer to
+        Jong Ryul Kim and Young Shik Moon. 
+        A robust wavelet-based digital watermark using level-adaptive
+        thresholding. In Proceedings of the 6th IEEE International
+        Conference on Image Processing ICIP '99, page 202,
+        Kobe, Japan, October 1999. 
+
+    Wang
+      refer to
+        Houng-Jyh Wang, Po-Chyi Su, and C.-C. Jay Kuo.
+        Wavelet-based digital image watermarking. Optics Express, 3
+        pp. 497, December 1998.
+
+    Xia
+      refer to
+        Xiang-Gen Xia, Charles G. Boncelet, and Gonzalo R. Arce. 
+        Wavelet transform based watermark for digital images. Optics Express, 3
+        pp. 497, December 1998. 
+
+    Xie
+      refer to
+        Liehua Xie and Gonzalo R. Arce. 
+        Joint wavelet compression and authentication watermarking. In 
+        Proceedings of the IEEE International Conference on Image Processing, 
+        ICIP '98, Chicago, IL, USA, 1998. 
+
+    Zhu
+      refer to
+       Wenwu Zhu, Zixiang Xiong, and Ya-Qin Zhang.
+       Multiresolution watermarking for images and video: a unified approach.
+       In Proceedings of the IEEE International Conference o
+
+    many more algorithms to come! 
+    see what is in stock: http://www.cosy.sbg.ac.at/~pmeerw/Watermarking
+
+  and utility programs
+
+    cmp_pgm	- compute difference image, PSNR, ...
+    cmp_dct	- compute full-frame DCT domain difference image
+    cmp_dct8x8  - compute 8x8 block-based DCT difference image
+    cmp_dwt     - compute DWT domain difference image
+
+What do I need?
+
+Unix (Linux), a reasonable C compiler (GCC), and the netpbm library which you 
+can get at http://wuarchive.wustl.edu/graphics/graphics/packages/NetPBM/
+
+
+Directions: How do I use the stuff?
+
+look at the MAKEFILE...
+each algorithms has at least 4 files: gen_algo_sig.c, wm_algo_e.c, wm_algo_d.c,
+cmp_algo_sig.c where 'algo' is the name of the actual watermarking algorithm 
+(usually the principal author's name), where might also be some common files 
+for each algorithm, algo_common.{c|h}, and some support files for sorting,
+the DCT, ...
+
+just try
+  
+  make
+  make test
+
+next, try to run each program with the -h parameter to find out what options 
+are supported - the programs are pretty consistent and have reasonable
+default settings
+
+e.g. 
+
+  wm_cox_e -h
+
+The programs all support standard input and standard output, the only
+supported image file format is PGM for grayscale images and PPM for color
+images; most programs have only been tested with 512x512 images.
+You can find the Lena image in PGM format in the images/ sub-directory.
+
+
+Disclaimer: #include <disclaimer.h>
+
+Feel free to use the accompaigning code for your research! However, I do
+not guarantee for anything, in particular parts of the provided code may
+be covered by copyrights of a third party or by patent claims. I do not
+guarantee for any functionality, bla-bla, ...
+
+If you use the accompanying code, please cite my thesis:
+
+  Peter Meerwald, Digital Image Watermarking in the Wavelet Transform Domain, 
+  Master's Thesis, Department of Scientific Computing, University of Salzburg,
+  Austria, January 2001.
+
+
+Contact: Comments are welcome!
+
+More algorithms will be added over time, I have implemented about 13
+watermarking algorithms in the spatial-, DCT-, and wavelet domain so far.
+Please report what problems you have, suggestions, ...
+
+Peter Meerwald
+
+Dept. of Scientific Computing
+University of Salzburg
+Jakob-Haringer-Str. 2
+A-5020 Salzburg 
+AUSTRIA
+
+pmeerw@cosy.sbg.ac.at
+http://www.cosy.sbg.ac.at/~pmeerw/Watermarking
+
++43-662-8044-6327

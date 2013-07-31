@@ -1,0 +1,42 @@
+Watermarking source
+
+version 0.5
+  * added algorithm kund2 and kund3
+  * added xie2
+  * fixed uninitialized variable level in wm_kim_{e|d}.c
+  * updated netpbm include file names (for netpbm 10.x)
+  * support for filter parametrization (undocumented), see param_stuff.c
+    and pollen_stuff.c
+
+version 0.4
+  * bug fixes
+      - wm_xia_{e|d}.c variable level uninitialized
+      - wm_zhu_{e|d}.c variable level uninitialized
+      - issue with random() vs. rand() and RAND_MAX in frid2_common.c
+  * added option to bruyn algorithm to disable block skipping
+  * added algorithm kim
+
+version 0.3
+  * added nice manual/documentation
+  * added algorithms by Dugad, Wang, Zhu, Fridrich
+  * added Makefiles for Win32 plattform (mingw32)
+
+version 0.2
+ * added contribution by Vassilis Fotopoulos (Piva's algorithm,
+   DCT, Hartley and subband domain) - see Fotopoulos/ subdirectory
+ * stuff moved to Meerwald/ subdirectory
+ * added Bruyndonckx, Corvi, Koch, Xia, Xie algorithms
+
+version 0.1
+ * initial release
+
+Peter Meerwald
+Dept. of Computer Sciences, University of Salzburg, Austria
+
+pmeerw@cosy.sbg.ac.at
+http://www.cosy.sbg.ac.at/~pmeerw/Watermarking
+
+
+Ubuntu build procedure:
+sudo apt-get install libnetpbm10 libnetpbm10-dev
+sudo apt-get install libpgm libpgm-dev

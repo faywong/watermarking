@@ -1,0 +1,79 @@
+.\"
+.\" cmp_dct8x8.1 - the *roff document processor man page source
+.\"
+.TH cmp_dct8x8 1 "98/07/08" "Watermarking, Version 1.0"
+.SH NAME
+cmp_dct8x8 \- a program to create the difference image of the
+8x8 DCT blocks of two PGM images
+.SH SYNOPSIS
+.B cmp_dct8x8
+[
+.B \-h
+]
+[
+.BI \-m \ number
+]
+[
+.BI \-o \ ofile
+]
+.BI \-i \ ifile
+.I file
+.SH DESCRIPTION
+.B cmp_dct8x8
+is a program to create the difference image of the 8x8 DCT blocks
+(frequency domain) of two PGM (portable graymap) grayscale
+images. To compare images in the spatial domain, either in
+PPM (portable pixmap) format for RGB color images or in PGM (portable
+graymap) format for grayscale images, use the
+.B cmp_ppm
+program or the
+.B cmp_pgm
+program, respectively.
+.PP
+If
+.I file
+or
+.I ofile
+is not specified, then standard input or standard output is
+used.
+.PP
+.SH OPTIONS
+.TP
+.B \-h
+Print a help message.
+.TP
+.BI \-i \ ifile
+The original image. Mandatory.
+.TP
+.BI \-m \ number
+Multiplication factor to magnify differences between the to
+original and input image.
+Default value: 16.
+.TP
+.BI \-o \ ofile
+Output image file to contain the difference image in PGM format.
+.TP
+.I file
+Input image that is compared against
+.I ifile.
+Default: standard input.
+.SH OUTPUT
+The difference image in PGM format is written to standard output or,
+optionally, to
+.I ofile.
+.SH AUTHOR
+Peter Meerwald. 
+Email bug reports to pmeerw@cosy.sbg.ac.at.
+.SH AVAILABILITY
+The most recent released version of
+.B cmp_dct8x8
+is always available
+at http://www.cosy.sbg.ac.at/~pmeerw/Watermarking or via anonymous ftp from ftp.cosy.sbg.ac.at in the
+directory /pub/people/pmeerw/Watermarking.
+.SH "SEE ALSO"
+.B cmp_pgm
+(1),
+.B cmp_ppm
+(1),
+.B cmp_dct
+(1)

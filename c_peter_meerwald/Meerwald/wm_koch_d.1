@@ -1,0 +1,114 @@
+.\"
+.\" wm_koch_d.1 - the *roff document processor man page source
+.\"
+.TH wm_koch_d 1 "98/07/05" "Watermarking, Version 1.0"
+.SH NAME
+.B wm_koch_d
+\- a program to extract signature bits that have been embedded into
+the DCT coefficients of an image
+.SH SYNOPSIS
+.B wm_koch_d
+[
+.B \-h
+]
+[
+.BI \-o \ ofile
+]
+[
+.BI \-q \ number
+]
+[
+.BI \-v \ number
+]
+.BI \-s \ sfile
+.IR file
+.SH DESCRIPTION
+.B wm_koch_d
+is a program to extract signature bits from the 8x8 DCT coefficients of
+an image, embedded with the
+.B wm_koch_e
+watermarking program.
+.B cmp_koch_sig
+program compares and tests the extracted signature against the original signature.
+.PP
+The input image is in PGM (portable graymap) format.
+.PP
+If
+.I file
+or
+.I ofile
+is not specified, then standard input or standard output is
+used. The signature
+.I sfile
+is a mandatory parameter however.
+.PP
+Please refer to E. Koch's paper "Towards Robust and Hidden
+Image Copyright", 1995, to get an idea about the algorithm.
+.PP
+.SH OPTIONS
+.TP
+.B \-h
+Print a help message.
+.TP
+.BI \-o \ ofile
+Output the extracted signature to
+.I ofile
+instead of standard output.
+.TP
+.BI \-q \ number
+Quality/robustness factor used to extract the signature.
+Overrides setting from signature file.
+.TP
+.BI \-s \ sfile
+The original signature file. See
+.B gen_koch_sig
+(1) for a description of the file format. Mandatory parameter.
+.BI \-v \ number
+Verbosity level. 0 for quiet operation, higher numbers for more 
+output. Default value: 0.
+.TP
+.IR file
+Signed (watermarked) input image in PGM format. Default: standard input.
+.PP
+.SH OUTPUT
+The extracted signature is written to standard output
+or, optionally, to
+.I ofile.
+.PP
+The extraction algorithm examines the relationship between two random
+coefficients of randomly selected 8x8 DCT blocks to reconstruct the
+signature bits.
+.PP
+The output file has the following format:
+.TP
+.B KCSG
+Magic to identify file type.
+.TP
+.I number
+The length of the signature in bits.
+.TP
+.I number
+The quality/robustness factor.
+.TP
+.I number
+The seed value for the pseudo-random number generator.
+.TP
+.I string
+The actual signature bytes.
+.PP
+.SH AUTHOR
+Peter Meerwald. 
+Email bug reports to pmeerw@cosy.sbg.ac.at.
+.SH AVAILABILITY
+The most recent released version of
+.B wm_koch_d
+is always available
+at http://www.cosy.sbg.ac.at/~pmeerw/Watermarking or via anonymous ftp from ftp.cosy.sbg.ac.at in the
+directory /pub/people/pmeerw/Watermarking.
+.SH "SEE ALSO"
+.BR gen_koch_sig
+(1),
+.BR wm_koch_e
+(1),
+.BR cmp_koch_sig
+(1)

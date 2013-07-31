@@ -1,0 +1,67 @@
+These codes use the DCT,Hartley and Subband DCT
+Transforms for watermarking purposes.All schemes
+are blind,no original image is used for detection.
+Each casting module is accompanied by a testing 
+module.Supposing that the watermark key that you
+select during casting is in the range 1-1000,the
+testing module will test all the keys in this range
+to produce the well known similarity diagrams used
+by Cox, Piva and many more with the peak being the
+proof of the watermark existence.
+
+I do not include a detection module because this implies
+the use of certain thresholds. Although the casting
+methods are almost standardized (multiplicative formula)
+there are still questions about this thresholding but
+the testing modules can be easily changed to fit this
+purpose.
+
+The DCT scheme does not use the visual masking improvement
+that Barni and his team suggest in one of their later works.
+In all casting programs we assume that the coefficients are
+diagonaly scanned,and ordered as shown in the following example.
+
+----------------------
+| 1| 3| 6|10|15|...
+----------------------
+| 2| 5| 9|14|...
+----------------------
+| 4| 8|13|...
+----------------------
+| 7|12|...
+----------------------
+|11|...
+----------------------
+
+which is quite simple comparing to the zig zag scanning 
+pattern that we know from the JPEG standard but does not
+affect at all the idea that we have of the middle 
+frequencies.Also the user should take care that
+
+starting_coefficient+number_of_coeffs_to_change<(N*N)/2
+
+which means that we shouldn't exceed the matrix diagonal.
+To do so the scanning scheme should be changed accordingly
+but this doesn't seem important because in all of the
+schemes we don't get out of the middle frequencies coefs.
+With correctly selected parameters,the schemes perform in
+the same way as if the coeffs were zig zag scanned.
+
+In the Subband DCT version,the first set of questions
+about starting coefficient,number of coefficients to
+alter and alpha parameter, refer to the LH,HL and HH
+band while the second set of questions sets the parameters
+about the LL band only.
+
+All schemes should not be used with the same set of parameters
+because each of the transforms, possess certain specific
+properties. This should be kept in mind for testing purposes.
+To use the right set of parameters please refer to corresponding
+bibliography.
+All code has been tested in Visual C++ v6.0
+
+Have some nice tests...
+Vassilis Fotopoulos
+
+for more info,ideas or points of discussion
+email vfotop1@physics.upatras.gr

@@ -1,0 +1,142 @@
+.\"
+.\" wm_corvi_e.1 - the *roff document processor man page source
+.\"
+.TH wm_corvi_e 1 "98/07/29" "Watermarking, Version 1.0"
+.SH NAME
+.B wm_corvi_e
+\- a program to embed a signature in the DWT residue of an image
+.SH SYNOPSIS
+.B wm_corvi_e
+[
+.BI \-a \ number
+]
+[
+.BI \-e \ number
+]
+[
+.BI \-f \ number
+]
+[
+.BI \-F \ ffile
+]
+[
+.BI \-g \ number
+]
+[
+.B \-h
+]
+[
+.BI \-o \ ofile
+]
+.br
+[
+.BI \-q \ number
+]
+[
+.BI \-v \ number
+]
+.BI \-s \ sfile
+.I file
+.SH DESCRIPTION
+.B wm_corvi_e
+is a program to embed a signature (watermark) from
+.I sfile
+into the DWT residue of an image
+.I file
+and output a signed (watermarked) image
+.I ofile.
+Both, input and output image,
+are in PGM (portable graymap) format.
+.PP
+If
+.I file
+or
+.I ofile
+is not specified, then standard input or standard output is
+used. The signature
+.I sfile
+is a mandatory parameter however.
+.PP
+.B gen_corvi_sig
+is used to generate a signature file,
+.B wm_corvi_d
+extracts a signature from a watermarked image and
+.B cmp_corvi_sig
+allows to compare and test an extracted watermark against the original
+signature.
+.PP
+Please refer to Marco Corvi's paper "Wavelet-based image watermarking
+for copyright protection", to get an idea about the algorithm.
+.PP
+.SH OPTIONS
+.TP
+.BI \-a \ number
+Alpha factor that determines embedding strength of the signature.
+Allows to override the setting in the signature file.
+.TP
+.BI \-e \ number
+Wavelet filtering method for forward transformation. 
+Allows to override the setting in the signature file.
+.TP
+.BI \-f \ number
+Wavelet filter number. 
+Allows to override the setting in the signature file.
+.TP
+.BI \-F \ ffile
+Wavelet filter definition file.
+Allows to override the setting in the signature file.
+.TP
+.BI \-g \ number
+Wavelet filtering method for inverse transformation. 
+Allows to override the setting in the signature file.
+.TP
+.B \-h
+Print a help message.
+.TP
+.BI \-o \ ofile
+Output watermarked image to the specified
+.I file
+instead of standard output.
+.TP
+.BI \-q \ number
+Set quantization/quality factor. Overrides the setting in the signature
+file.
+.TP
+.BI \-s \ sfile
+The signature file to embed into the input image. See
+.B gen_corvi_sig
+(1) for a description of the file format. Mandatory parameter.
+.IR file
+Input image in PGM format to sign (watermark). Default: standard input.
+.TP
+.BI \-v \ number
+Verbosity level. Specify higher numbers for more informatative
+output. Default value: 0.
+.TP
+.I file
+The image in PGM format to be watermarked.
+.PP
+.SH OUTPUT
+The signed (watermarked) image in PGM format is written to standard output
+or, optionally, to
+.I ofile.
+The length of the signature (watermark) determines the level of the 
+image residue (coarse image) where the signature is embedded.
+.PP
+.SH AUTHOR
+Peter Meerwald. Email bug reports to pmeerw@cosy.sbg.ac.at.
+.SH AVAILABILITY
+The most recent released version of
+.B wm_corvi_e
+is always available
+at http://www.cosy.sbg.ac.at/~pmeerw/Watermarking or via anonymous ftp from ftp.cosy.sbg.ac.at in the
+directory /pub/people/pmeerw/Watermarking.
+.SH "SEE ALSO"
+.BR gen_corvi_sig
+(1),
+.BR wm_corvi_d
+(1),
+.BR wm_corvi_s
+(1),
+.BR cmp_corvi_sig
+(1)

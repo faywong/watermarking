@@ -1,0 +1,131 @@
+.\"
+.\" gen_kutter_sig.1 - the *roff document processor man page source
+.\"
+.TH gen_kutter_sig 1 "98/06/30" "Watermarking, Version 1.0"
+.SH NAME
+.B gen_kutter_sig 
+\- a program to generate a signature for
+the 
+.B wm_kutter_e 
+watermarking program
+.SH SYNOPSIS
+.B gen_kutter_sig
+[
+.B \-h
+]
+[
+.BI \-n \ number
+]
+[
+.BI \-o \ file
+]
+[
+.BI \-p \ number
+]
+[
+.BI \-q \ number
+]
+[
+.BI \-r \ number
+]
+.br
+[
+.BI \-s \ number
+]
+[
+.I file
+]
+.SH DESCRIPTION
+.B gen_kutter_sig
+is a program to generate a signature to be
+embedded with the 
+.B wm_kutter_e 
+watermarking program and extracted with the 
+.B wm_kutter_d 
+program. The
+.B cmp_kutter_sig 
+program is used to compare and test an
+extracted signature with the original signature.
+.PP
+Please refer to M. Kutter's paper "Digital Signature of Color Images
+using Amplitude Modulation", 1997, to get an idea about the algorithm.
+.PP
+.SH OPTIONS
+.TP
+.B \-h
+Print a help message.
+.TP
+.BI \-n \ number
+Limit the signature length to
+.I number
+bits (0 <
+.I number
+<= 1024) unless reading from standard input. When reading from
+standard input, the signature is terminated by the first
+carriage return character.
+.TP
+.BI \-o \ file
+Output signature to the specified 
+.TP
+.BI \-p \ number
+Density parameter in the range 0.0 <
+.I number
+<= 1.0. Default value 0.01.
+.TP
+.BI \-q \ number
+Signature strength. Default value 0.1.
+.TP
+.BI \-r \ number
+Signature bit repetition factor. Specifies how often a single
+signature bit is embedded. Default value 8.
+.I file
+instead of standard output.
+.TP
+.BI \-s \ number
+Specify a seed value to initialize the pseudo-random number 
+generator; if not specified, time and pid (process id) are used
+to initialize the pseudo-random number generator.
+.TP
+.I file
+Input file to read raw signature data from. Default: standard
+input.
+.PP
+.SH OUTPUT
+The output file has the following format:
+.TP
+.B KTSG
+Magic to identify file type.
+.TP
+.I number
+The length of the signature in bits. 
+.TP
+.I number
+The density parameter.
+.TP 
+.I number
+The signature strength.
+.TP
+.I number
+The bit repetition parameter.
+.TP
+.I number
+The seed value for the pseudo-random number generator.
+.TP
+.I string
+The actual signature bytes.
+.PP
+.SH AUTHOR
+Peter Meerwald. Email bug reports to pmeerw@cosy.sbg.ac.at.
+.SH AVAILABILITY
+The most recent released version of
+.B gen_kutter_sig
+is always available
+at http://www.cosy.sbg.ac.at/~pmeerw/Watermarking or via anonymous ftp from ftp.cosy.sbg.ac.at in the
+directory /pub/people/pmeerw/Watermarking.
+.SH "SEE ALSO"
+.BR wm_kutter_e
+(1),
+.BR wm_kutter_d
+(1),
+.BR cmp_kutter_sig
+(1)

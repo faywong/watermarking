@@ -1,0 +1,10 @@
+syntax: glob
+*.orig
+*.rej
+*~
+*.o
+*.a
+.dummy
+
+syntax: regexp
+.*\#.*\#$

@@ -1,0 +1,21 @@
+M.Barni, F. Bartolini, V. Cappellini, A. Piva. "A DCT-Domain
+System for Robust Image Watermarking",
+Signal Processing, vol.66, pp 357-372, 1998.
+
+V. Fotopoulos, A.N. Skodras, "A Subband DCT approach to
+image watermarking", X European Signal Processing Conference,
+September 4-8, 2000, Tampere, Finland
+
+parameters:
+for starting coefficient reasonable values for the dct and hartley schemes
+and this kind of dimensions is around 5000-20000, for the watermark length 10000-50000,
+and seed/key should be in the range 1-1000 so that the output file of the testing module
+gives a right similarity diagram
+
+for the subband dct version, things change corresponding to coefficients
+because the bands' sizes are 1/4 of the original image's size.
+starting coef should be between 3000-5000 and length 10000-20000
+for the alpha parameter i use 0.2 for all bands except LL for which i use
+0.1
+
+

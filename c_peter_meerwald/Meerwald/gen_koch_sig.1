@@ -1,0 +1,110 @@
+.\"
+.\" gen_koch_sig.1 - the *roff document processor man page source
+.\"
+.TH gen_koch_sig 1 "98/06/30" "Watermarking, Version 1.0"
+.SH NAME
+.B gen_koch_sig
+\- a program to generate a signature for
+the
+.B wm_koch_e
+watermarking program
+.SH SYNOPSIS
+.B gen_koch_sig
+[
+.B \-h
+]
+[
+.BI \-n \ number
+]
+[
+.BI \-o \ file
+]
+[
+.BI \-q \ number
+]
+[
+.BI \-s \ number
+]
+[
+.IR file
+]
+.SH DESCRIPTION
+.B gen_koch_sig
+is a program to generate a signature to be
+embedded with the
+.B wm_koch_e
+watermarking program and extracted with the
+.B wm_koch_d
+program. The
+.B cmp_koch_sig
+program is used to compare and test an
+extracted signature with the original signature.
+.PP
+Please refer to E. Koch's paper "Towards Robust and Hidden
+Image Copyright", 1995, to get an idea about the algorithm.
+.PP
+.SH OPTIONS
+.TP
+.B \-h
+Print a help message.
+.TP
+.BI \-n \ number
+Limit the signature length to
+.I number
+bits (0 <
+.I number
+<= 1024) unless reading from standard input. When reading from
+standard input, the signature is terminated by the first
+carriage return character.
+.TP
+.BI \-o \ file
+Output signature to the specified
+.I file
+instead of standard output.
+.TP
+.BI \-q \ number
+Quality/robustness factor used to embed signature into image.
+Default value: 3.0.
+.TP
+.BI \-s \ number
+Specify a seed value to initialize the pseudo-random number
+generator; if not specified, time and pid (process id) are used
+to initialize the pseudo-random number generator.
+.TP
+.IR file
+Input file to read raw signature data from. Default: standard
+input.
+.PP
+.SH OUTPUT
+The output file has the following format:
+.TP
+.B KCSG
+Magic to identify file type.
+.TP
+.I number
+The length of the signature in bits.
+.TP
+.I number
+The quality/robustness factor.
+.TP
+.I number
+The seed value for the pseudo-random number generator.
+.TP
+.I string
+The actual signature bytes.
+.PP
+.SH AUTHOR
+Peter Meerwald. Email bug reports to pmeerw@cosy.sbg.ac.at.
+.SH AVAILABILITY
+The most recent released version of
+.B gen_koch_sig
+is always available
+at http://www.cosy.sbg.ac.at/~pmeerw/Watermarking or via anonymous ftp from ftp.cosy.sbg.ac.at in the
+directory /pub/people/pmeerw/Watermarking.
+.SH "SEE ALSO"
+.BR wm_koch_e
+(1),
+.BR wm_koch_d
+(1),
+.BR cmp_koch_sig
+(1)

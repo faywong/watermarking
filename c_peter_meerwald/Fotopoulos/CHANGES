@@ -1,0 +1,2 @@
+removed #include <values.h> - it is not needed and MS VC++ does not have 
+it (Sarat Atluri)

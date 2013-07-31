@@ -1,0 +1,115 @@
+.\"
+.\" gen_cox_sig.1 - the *roff document processor man page source
+.\"
+.TH gen_cox_sig 1 "98/06/30" "Watermarking, Version 1.0"
+.SH NAME
+.B gen_cox_sig 
+\- a program to generate a signature for
+the 
+.B wm_cox_e 
+watermarking program
+.SH SYNOPSIS
+.B gen_cox_sig
+[
+.BI \-a \ number
+]
+[
+.BI \-d \ number
+]
+[
+.B \-h
+]
+[
+.BI \-m \ number
+]
+[
+.BI \-n \ number
+]
+[
+.BI \-o \ file
+]
+[
+.BI \-q \ number
+]
+[
+.BI \-s \ number
+]
+.SH DESCRIPTION
+.B gen_cox_sig
+is a program to generate a signature to be
+embedded with the 
+.B wm_cox_e 
+watermarking program and extracted with the 
+.B wm_cox_d 
+program. The
+.B cmp_cox_sig 
+program is used to compare and test an
+extracted signature with the original signature.
+.PP
+Please refer to Ingemar J. Cox's paper "Secure Spread Spectrum
+Watermarking for Multimedia", 1995, to get an idea about the algorithm.
+.PP
+.SH OPTIONS
+.TP
+.BI \-a \ number
+Alpha factor that determines embedding strength of the signature. Default
+value 0.3.
+.TP
+.BI \-d \ number
+Deviation for the normal distributed signature values, default 1.0.
+.TP
+.B \-h
+Print a help message.
+.TP
+.BI \-m \ number
+Mean of the normal distributed signature values, default 0.0.
+.TP
+.BI \-n \ number
+Length of the watermark. Default value 100.
+.TP
+.BI \-o \ file
+Output signature to the specified 
+.I file
+instead of standard output.
+.TP
+.BI \-q \ number
+Quantization/quality factor. Default value 3.
+.TP
+.BI \-s \ number
+Specify a seed value to initialize the pseudo-random number 
+generator; if not specified, time and pid (process id) are used
+to initialize the pseudo-random number generator.
+.PP
+.SH OUTPUT
+The output file has the following format:
+.TP
+.B CXSG
+Magic to identify file type.
+.TP
+.I number
+The length of the signature in bits. 
+.TP
+.I number
+The alpha factor (embedding strength).
+.TP
+.I number
+The quantization/quality factor.
+.TP
+.I numbers
+The actual normal distributed signature values, one per line.
+.PP
+.SH AUTHOR
+Peter Meerwald. Email bug reports to pmeerw@cosy.sbg.ac.at.
+.SH AVAILABILITY
+The most recent released version of
+.B gen_cox_sig
+is always available
+at http://www.cosy.sbg.ac.at/~pmeerw/Watermarking or via anonymous ftp from ftp.cosy.sbg.ac.at in the
+directory /pub/people/pmeerw/Watermarking.
+.SH "SEE ALSO"
+.BR wm_cox_e
+(1),
+.BR wm_cox_d
+(1),
+.BR cmp_cox_sig
+(1)
